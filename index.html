@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08080a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="Track disturbing, extreme and bleak films across two lists.">
+<title>Disturbing Movie Tracker</title>
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkRpc3R1cmJpbmcgTW92aWUgVHJhY2tlciIsCiAgInNob3J0X25hbWUiOiAiRGlzdHVyYmluZyBNb3ZpZXMiLAogICJkZXNjcmlwdGlvbiI6ICJUcmFjayBkaXN0dXJiaW5nLCBleHRyZW1lIGFuZCBibGVhayBmaWxtcyBhY3Jvc3MgdHdvIGxpc3RzLiIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAic2NvcGUiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJvcmllbnRhdGlvbiI6ICJhbnkiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwODA4MGEiLAogICJ0aGVtZV9jb2xvciI6ICIjMDgwODBhIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiaWNvbi5zdmciLAogICAgICAic2l6ZXMiOiAiYW55IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiaWNvbi0xOTIucG5nIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICB9LAogICAgewogICAgICAic3JjIjogImljb24tNTEyLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJpY29uLTE4MC5wbmciLAogICAgICAic2l6ZXMiOiAiMTgweDE4MCIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgIH0KICBdCn0=">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWxuczpjMnBhPSJodHRwOi8vYzJwYS5vcmcvbWFuaWZlc3QiPjxtZXRhZGF0YT48YzJwYTptYW5pZmVzdD5BQUFXZ21wMWJXSUFBQUFlYW5WdFpHTXljR0VBRVFBUWdBQUFxZ0E0bTNFRFl6SndZUUFBQUJaY2FuVnRZZ0FBQUVkcWRXMWtZekp0WVFBUkFCQ0FBQUNxQURpYmNRTjFjbTQ2WXpKd1lUb3hZVFkyT1RKaE5pMHdZVEJrTFRSa05EZ3RPVFprT1Mwek1EaGxPVGhqWmpjME5tVUFBQUFEbDJwMWJXSUFBQUFwYW5WdFpHTXlZWE1BRVFBUWdBQUFxZ0E0bTNFRFl6SndZUzVoYzNObGNuUnBiMjV6QUFBQUFMeHFkVzFpQUFBQVJHcDFiV1JqWW05eUFCRUFFSUFBQUtvQU9KdHhFMk15Y0dFdWFXNW5jbVZrYVdWdWRDNTJNd0FBQUFBWVl6SnphUGErVUozN2FGdm45MCtSTWcyaklzZ0FBQUJ3WTJKdmNxTnBaR002Wm05eWJXRjBiV2x0WVdkbEwzTjJaeXQ0Yld4cWFXNXpkR0Z1WTJWSlJIZ3NlRzF3T21scFpEcGhNVFl4WVdFNU15MHpZekl6TFRRM1pHWXRZVGMyTXkwNU1HVmxNR0k0TlRjMVpEUnNjbVZzWVhScGIyNXphR2x3YUhCaGNtVnVkRTltQUFBQjRtcDFiV0lBQUFCQmFuVnRaR05pYjNJQUVRQVFnQUFBcWdBNG0zRVRZekp3WVM1aFkzUnBiMjV6TG5ZeUFBQUFBQmhqTW5Ob29JM1JGUUVBU3NUb0hHdHpEeWpPTkFBQUFabGpZbTl5b21kaFkzUnBiMjV6Z3FKbVlXTjBhVzl1YTJNeWNHRXViM0JsYm1Wa2FuQmhjbUZ0WlhSbGNuT2hhMmx1WjNKbFpHbGxiblJ6Z2FKamRYSnNlQzF6Wld4bUkycDFiV0ptUFdNeWNHRXVZWE56WlhKMGFXOXVjeTlqTW5CaExtbHVaM0psWkdsbGJuUXVkak5rYUdGemFGZ2cyeXZUZTZ3UUdVdjhMOHh0OTZjRGdPVFBscGNnUDVhMkduSnRRLzY4ZFRha1ptRmpkR2x2Ym5nZFkyOXRMbUZ1ZEdoeWIzQnBZeTVqYkdGMVpHVXVjSEp2ZG1sa1pXUnFjR0Z5WVcxbGRHVnljNkY0SDJOdmJTNWhiblJvY205d2FXTXViM0pwWjJsdUxXTnZibVpwWkdWdVkyVm5kVzVyYm05M2JtdGtaWE5qY21sd2RHbHZibmhtUTJ4aGRXUmxJSEJ5YjNacFpHVmtJSFJvYVhNZ1ptbHNaU0JoZENCMGFHVWdjbVZ4ZFdWemRDQnZaaUJoSUhWelpYSWdZVzVrSUcxaGVTQm9ZWFpsSUdOeVpXRjBaV1FnYjNJZ2JXOWthV1pwWldRZ2RHaGxJR1pwYkdVZ1kyOXVkR1Z1ZEhNdWJYTnZablIzWVhKbFFXZGxiblNoWkc1aGJXVm1RMnhoZFdSbGNtRnNiRUZqZEdsdmJuTkpibU5zZFdSbFpQVUFBQURJYW5WdFlnQUFBRUJxZFcxa1kySnZjZ0FSQUJDQUFBQ3FBRGliY1JOak1uQmhMbWhoYzJndVpHRjBZUUFBQUFBWVl6SnphSENlQ1FNeGxQYjN4cDN4ZWd1WEdvSUFBQUNBWTJKdmNxVmpZV3huWm5Ob1lUSTFObU53WVdSTkFBQUFBQUFBQUFBQUFBQUFBR1JvWVhOb1dDQ2xOT3NuSnJYQ2ZLT0N1NTJncXI1NUhxRDNkVkNRcjNuMlI3V3pvQUxPTkdSdVlXMWxibXAxYldKbUlHMWhibWxtWlhOMGFtVjRZMngxYzJsdmJuT0JvbVZ6ZEdGeWRCaDlabXhsYm1kMGFCa2VCQUFBQWo1cWRXMWlBQUFBSjJwMWJXUmpNbU5zQUJFQUVJQUFBS29BT0p0eEEyTXljR0V1WTJ4aGFXMHVkaklBQUFBQ0QyTmliM0tsWTJGc1oyWnphR0V5TlRacGMybG5ibUYwZFhKbGVFMXpaV3htSTJwMWJXSm1QUzlqTW5CaEwzVnlianBqTW5CaE9qRmhOalk1TW1FMkxUQmhNR1F0TkdRME9DMDVObVE1TFRNd09HVTVPR05tTnpRMlpTOWpNbkJoTG5OcFoyNWhkSFZ5WldwcGJuTjBZVzVqWlVsRWVDeDRiWEE2YVdsa09tUmhZbVZoTkdJNExXVmtNell0TkRBelpTMDVZMk0wTFdFMU9EUmxORE5qTnpSa1puSmpjbVZoZEdWa1gyRnpjMlZ5ZEdsdmJuT0RvbU4xY214NExYTmxiR1lqYW5WdFltWTlZekp3WVM1aGMzTmxjblJwYjI1ekwyTXljR0V1YVc1bmNtVmthV1Z1ZEM1Mk0yUm9ZWE5vV0NEYks5TjdyQkFaUy93dnpHMzNwd09BNU0rV2x5QS9scllhY20xRC9yeDFOcUpqZFhKc2VDcHpaV3htSTJwMWJXSm1QV015Y0dFdVlYTnpaWEowYVc5dWN5OWpNbkJoTG1GamRHbHZibk11ZGpKa2FHRnphRmdnK1RyWkV0U0FrbDVoQXNyamNXbXJYVXZ2QThZRXpZYklLUWtac1VVSjl2bWlZM1Z5YkhncGMyVnNaaU5xZFcxaVpqMWpNbkJoTG1GemMyVnlkR2x2Ym5Ndll6SndZUzVvWVhOb0xtUmhkR0ZrYUdGemFGZ2dhWGg2N2xaOFBaQXJnYlBOSFlCc2NjOFlWVWRVcFdFYks4RGRZTVFKemhWMFkyeGhhVzFmWjJWdVpYSmhkRzl5WDJsdVptK2paRzVoYldWdlFXNTBhSEp2Y0dsaklFWnBiR1Z6WjNabGNuTnBiMjVsTVM0d0xqQnJjM0JsWTFabGNuTnBiMjVsTWk0MExqQUFBQkE0YW5WdFlnQUFBQ2hxZFcxa1l6Smpjd0FSQUJDQUFBQ3FBRGliY1FOak1uQmhMbk5wWjI1aGRIVnlaUUFBQUJBSVkySnZjdEtFV1FJU29nRW1HQ0ZaQWdvd2dnSUdNSUlCamFBREFnRUNBaFJBNWFBSzdzSTUwTDY0Zy9vR1FnVTlaMVVUQURBS0JnZ3Foa2pPUFFRREF6QkpNUmN3RlFZRFZRUUtFdzVCYm5Sb2NtOXdhV01zSUZCQ1F6RXVNQ3dHQTFVRUF4TWxRVzUwYUhKdmNHbGpJRU52Ym5SbGJuUWdRM0psWkdWdWRHbGhiSE1nVW05dmRDQkRRVEFlRncweU5qQTRNRGN4T0RRek5UWmFGdzB5T0RBNE1EWXhPVFF6TlRaYU1FUXhGekFWQmdOVkJBb1REa0Z1ZEdoeWIzQnBZeXdnVUVKRE1Ta3dKd1lEVlFRREV5QkJiblJvY205d2FXTWdRMnhoZFdSbElFTnZiblJsYm5RZ1UybG5ibWx1WnpCWk1CTUdCeXFHU000OUFnRUdDQ3FHU000OUF3RUhBMElBQkpoNkNtdkxVQmdGRk5VMHZVS2xPVnRFNmRqZDE3TDVTdXdYMExlbUZpc0JNM2RrZC8zY3lqeEZBM1FvNVM0NmZYMC9paFkwVlo3bWZiOUtGNzAzdDVPaldEQldNQTRHQTFVZER3RUIvd1FFQXdJSGdEQVZCZ05WSFNVRURqQU1CZ29yQmdFRUFZUG9YZ0lCTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVemxIaUJJRk9aRnNqK09QRXo1bytuTUhYWE1Jd0NnWUlLb1pJemowRUF3TURad0F3WkFJd01YTWRGSjRCZXRMTFZZN09SdUU5bm9xYmJBWk9abi9hQXJYeVR3RkFaZktyUHp4RjJ2UG9KTmYxK1VDZGcxWEdBakJ3WDF6ZDlXR3FZa3FtTDVTRnF3MVF5U2pyMXpKZnBKTTkrMXJkRHdTUExNT1BPakt1aVhqb1UvcFVVZUc5UndtaFkzQmhaRmtObmdBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFQWllRQksxaVdEZk4zUTl5eFRBVlhCK25Lb211RktWWktSeERKdzFqWlZ0aTZkeWZ2MkdmNDVKUFUweHdoc1lZOC9DeWdzZUZycjhib2R3c2ZRdVB1SDVTSDQ9PC9jMnBhOm1hbmlmZXN0PjwvbWV0YWRhdGE+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0iIzA4MDgwYSIvPjxyZWN0IHg9Ijk2IiB5PSIxMjgiIHdpZHRoPSIzMjAiIGhlaWdodD0iMjU2IiByeD0iMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I4MzIzYSIgc3Ryb2tlLXdpZHRoPSIyOCIvPjxyZWN0IHg9Ijk2IiB5PSIxMjgiIHdpZHRoPSIzMjAiIGhlaWdodD0iNTIiIHJ4PSIyNiIgZmlsbD0iI2I4MzIzYSIvPjxwYXRoIGQ9Ik0xNzYgMzIwbDQ0IDQwIDExNi0xMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNmYmY2ZiIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+Cg==" type="image/svg+xml">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADdElEQVR4nO3dMU7cQBiG4SFKseIoqWgizkDHJThBqpwgVU7AJeg4A0pDxXlSONqQ3f0cr+0dM/bzlAhpLP8v45FYa692u+sCp3xa+gL4uMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEH1ecO2nLzcLrt6Q+7fXRda9WuRbE2QxQv1Easchi4lqJlL1zKGM6WreQwdSonpx2DbmUu1O2jmIKsVh25hXnftp5yASB5E4iMRBJA4icRCJg0gcROIgEgeROIiW/JhgZ6nPwDVh2f9J2TmIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEcRG3zw9LX8IMxDG/rowV9CGOmb1vovU+xDGn4xqa7kMcs0kdtNuHOObRX0CjfYhjBkNm32If4phq+NSb60Mck5w175e7x8tdySWIY7x1l1HEMdrqyyjiGGcLZRRxjLCRMoo4zrWdMoo4zrKpMoo4httaGUUcA22wjCKOIbZZRhHHf222jCKOflsuo4ijx8bLKOJIlFHEcZIyOuI4pIw9cfxDGe+J4y9lHBDHH8o41nwcs3wwUxkntR3HLC8eKiNpOI5ZXjxURo9W45jlxUNl9Gs1jpNunx8u9BbJBssojcYx/d1DZQzRXhzTZ6+MgRqLY/pTQxnDNRbHWdOaeGjdeBmluTjKhD6Uca724iij+lDGCE3GUUp5uXscPkJljNNqHJ3ZB6mM99qOo8w6TmUcaD6OMtNQlXFsDXGUyaNVxkkriaNMGLAykvXEUUaNWRk9rna76wrLPH25qbDK3o+fX4f82vdvvy59JZdz//Z66SVWtXPsDZl602XUUSmOCpkf6J9962XUuZ/r3Dk6XQHvOzj+CT0qnTk6lU8ea1VtG17zzsFEVeOof/JYn5r3sOpjZc/zZYT6f1rLxNGRyEBL7bhLxsEH50BKJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEP0Go5/eMRMOsPAAAAAASUVORK5CYII=">
+<meta name="apple-mobile-web-app-title" content="Disturbing Movies">
+<meta name="format-detection" content="telephone=no">
+<style>
+:root {
+  --bg: #08080a;
+  --bg-2: #0f0f12;
+  --card: #18181c;
+  --card-2: #212126;
+  --line: #2a2a31;
+  --text: #ececee;
+  --muted: #9a9aa4;
+  --dim: #63636c;
+  --red: #b8323a;
+  --red-soft: rgba(184, 50, 58, 0.16);
+  --green: #3fbf6f;
+  --green-soft: rgba(63, 191, 111, 0.16);
+  --amber: #d9a441;
+  --blue: #5b8def;
+  --radius: 16px;
+  --radius-s: 10px;
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --font: -apple-system, "Roboto", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.45; -webkit-text-size-adjust: 100%; }
+body { padding-bottom: calc(96px + var(--sab)); overscroll-behavior-y: contain; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; padding: 0; }
+a { color: var(--blue); }
+::selection { background: var(--red); color: #fff; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.hidden { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---------- header ---------- */
+.top { padding: calc(14px + var(--sat)) calc(16px + var(--sar)) 8px calc(16px + var(--sal)); }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.brand h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.brand h1 small { display: block; color: var(--dim); font-weight: 500; font-size: 12px; letter-spacing: 0.02em; margin-top: 2px; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--card); color: var(--muted); flex: none; }
+.icon-btn:active { background: var(--card-2); }
+.icon-btn svg { width: 20px; height: 20px; }
+
+.progress-block { margin-top: 12px; }
+.overall { display: flex; align-items: baseline; gap: 8px; }
+.overall .num { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.overall .label { color: var(--muted); font-size: 13px; }
+.bar { height: 8px; border-radius: 99px; background: var(--card-2); overflow: hidden; margin-top: 8px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--green); border-radius: 99px; transition: width 0.4s cubic-bezier(.2,.8,.2,1); }
+.list-progress { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.lp { background: var(--card); border-radius: var(--radius-s); padding: 10px 12px; }
+.lp b { display: block; font-size: 13px; font-weight: 600; }
+.lp span { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.lp .bar { height: 5px; margin-top: 6px; }
+
+/* ---------- toolbar ---------- */
+.toolbar { position: sticky; top: 0; z-index: 20; background: linear-gradient(var(--bg) 85%, transparent); padding: 6px calc(16px + var(--sar)) 10px calc(16px + var(--sal)); }
+.search { display: flex; align-items: center; gap: 8px; background: var(--card); border-radius: 14px; padding: 0 12px; height: 46px; border: 1px solid transparent; }
+.search:focus-within { border-color: var(--line); }
+.search svg { width: 18px; height: 18px; color: var(--dim); flex: none; }
+.search input { flex: 1; background: none; border: 0; outline: 0; min-width: 0; height: 100%; font-size: 16px; }
+.search input::placeholder { color: var(--dim); }
+.search .clear { width: 32px; height: 32px; border-radius: 50%; color: var(--muted); }
+.controls { display: flex; gap: 8px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 2px; }
+.controls::-webkit-scrollbar { display: none; }
+.chip { flex: none; height: 38px; padding: 0 14px; border-radius: 99px; background: var(--card); color: var(--muted); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; border: 1px solid transparent; }
+.chip.on { background: var(--text); color: var(--bg); }
+.chip.on.red { background: var(--red); color: #fff; }
+.chip.on.green { background: var(--green); color: #05130a; }
+.chip svg { width: 15px; height: 15px; }
+.chip .badge { background: var(--red); color: #fff; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 99px; }
+.chip.on .badge { background: var(--bg); color: var(--text); }
+.select-wrap { position: relative; flex: none; }
+.select-wrap select { appearance: none; -webkit-appearance: none; height: 38px; border-radius: 99px; background: var(--card); color: var(--muted); border: 0; padding: 0 30px 0 14px; font-size: 14px; font-weight: 500; }
+.select-wrap::after { content: ""; position: absolute; right: 13px; top: 15px; border: 4px solid transparent; border-top-color: var(--muted); pointer-events: none; }
+
+/* ---------- lists ---------- */
+.lists { padding: 0 calc(16px + var(--sar)) 0 calc(16px + var(--sal)); display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 820px) { .lists { grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; } }
+.list-head { width: 100%; display: flex; align-items: center; gap: 10px; padding: 10px 0; text-align: left; min-height: 48px; border-bottom: 1px solid var(--line); }
+.list-head .mark { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.list-head h2 { margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; flex: 1; }
+.list-head .count { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.list-head .chev { width: 18px; height: 18px; color: var(--dim); transition: transform 0.25s; }
+.list.collapsed .list-head .chev { transform: rotate(-90deg); }
+.list.collapsed .cards { display: none; }
+.cards { display: grid; gap: 10px; padding-top: 10px; }
+.empty { color: var(--dim); font-size: 14px; padding: 18px 4px; text-align: center; }
+
+/* ---------- card ---------- */
+.card { background: var(--card); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: 92px 1fr; position: relative; }
+.card.watched { box-shadow: inset 3px 0 0 var(--green); }
+.card.watching { box-shadow: inset 3px 0 0 var(--amber); }
+.card.dropped { opacity: 0.55; }
+.poster { width: 92px; aspect-ratio: 2 / 3; background: var(--card-2); position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+.poster img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.poster .ph { padding: 8px; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--muted); letter-spacing: -0.01em; word-break: break-word; position: relative; z-index: 1; }
+.poster .ph::before { content: ""; position: absolute; left: 8px; top: -6px; width: 22px; height: 2px; background: var(--red); }
+.poster .pos { position: absolute; top: 6px; left: 6px; font-size: 10px; font-weight: 700; color: var(--bg); background: var(--muted); padding: 1px 6px; border-radius: 6px; z-index: 2; }
+.card .body { padding: 10px 12px 10px 12px; min-width: 0; display: flex; flex-direction: column; gap: 6px; text-align: left; }
+.card .open { display: contents; }
+.card .title { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; margin: 0; }
+.card .title .yr { color: var(--muted); font-weight: 500; }
+.meta { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.scores { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12px; font-variant-numeric: tabular-nums; }
+.score { display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border-radius: 7px; background: var(--card-2); color: var(--muted); }
+.score b { color: var(--text); font-weight: 600; }
+.score.na b { color: var(--dim); font-weight: 500; }
+.dscore { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 7px; background: var(--red-soft); color: #e08c92; font-weight: 700; font-size: 12px; }
+.dscore b { font-size: 13px; }
+.dscore.d10 { background: var(--red); color: #fff; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag { font-size: 11px; color: var(--muted); background: var(--bg-2); padding: 2px 7px; border-radius: 6px; }
+.card .tags .tag:nth-child(n+4) { display: none; }
+.card-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 0 10px 10px; }
+.watch-btn { height: 48px; border-radius: 12px; background: var(--card-2); color: var(--text); font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.15s, transform 0.1s; letter-spacing: 0.01em; }
+.watch-btn:active { transform: scale(0.98); }
+.watch-btn.is-watched { background: var(--green); color: #05130a; }
+.watch-btn.is-watching { background: var(--amber); color: #1b1200; }
+.watch-btn.is-dropped { background: #3a3a42; color: var(--muted); }
+.watch-btn svg { width: 18px; height: 18px; }
+.more-btn { width: 48px; height: 48px; border-radius: 12px; background: var(--card-2); color: var(--muted); display: inline-flex; align-items: center; justify-content: center; }
+.more-btn svg { width: 20px; height: 20px; }
+.card .mine { font-size: 12px; color: var(--muted); }
+.card .mine b { color: var(--amber); }
+
+/* ---------- floating action ---------- */
+.fab { position: fixed; right: calc(16px + var(--sar)); bottom: calc(16px + var(--sab)); height: 52px; padding: 0 20px 0 16px; border-radius: 99px; background: var(--red); color: #fff; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 25; }
+.fab svg { width: 20px; height: 20px; }
+.fab:active { transform: scale(0.97); }
+
+/* ---------- sheet / overlay ---------- */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 40; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+.overlay.open { opacity: 1; pointer-events: auto; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: calc(100% - var(--sat) - 12px); background: var(--bg-2); border-radius: 22px 22px 0 0; z-index: 50; transform: translateY(105%); transition: transform 0.28s cubic-bezier(.2,.8,.2,1); display: flex; flex-direction: column; overflow: hidden; }
+.sheet.open { transform: translateY(0); }
+.sheet .grab { width: 40px; height: 4px; border-radius: 99px; background: var(--line); margin: 10px auto 0; flex: none; }
+.sheet .sheet-body { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 10px calc(16px + var(--sar)) calc(24px + var(--sab)) calc(16px + var(--sal)); overscroll-behavior: contain; }
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px calc(16px + var(--sar)) 0 calc(16px + var(--sal)); flex: none; }
+.sheet-head h2 { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+@media (min-width: 820px) { .sheet { left: 50%; right: auto; width: 680px; transform: translate(-50%, 105%); } .sheet.open { transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* ---------- detail ---------- */
+.hero { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: start; }
+.hero .poster { width: 120px; border-radius: 12px; }
+.hero .poster .ph { font-size: 13px; }
+.hero h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+.hero .orig { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.hero .meta { margin-top: 8px; }
+.hero .listtag { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 7px; background: var(--card); color: var(--muted); }
+.big-watch { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; }
+.big-watch button { height: 52px; border-radius: 12px; background: var(--card); color: var(--muted); font-weight: 700; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1; }
+.big-watch button svg { width: 18px; height: 18px; }
+.big-watch button.on { background: var(--text); color: var(--bg); }
+.big-watch button.on[data-status="watched"] { background: var(--green); color: #05130a; }
+.big-watch button.on[data-status="watching"] { background: var(--amber); color: #1b1200; }
+.big-watch button.on[data-status="dropped"] { background: #4a4a54; color: #fff; }
+.section { margin-top: 20px; }
+.section h3 { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 0.02em; }
+.section p { margin: 0; color: var(--text); font-size: 15px; line-height: 1.5; }
+.score-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.sc { background: var(--card); border-radius: 12px; padding: 10px 6px; text-align: center; }
+.sc b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.sc b.na { color: var(--dim); font-size: 15px; }
+.sc span { display: block; font-size: 10.5px; color: var(--muted); margin-top: 3px; line-height: 1.15; }
+.dbig { display: flex; align-items: center; gap: 14px; background: var(--red-soft); border-radius: 14px; padding: 12px 14px; }
+.dbig .n { font-size: 40px; font-weight: 800; letter-spacing: -0.04em; color: #e6959b; line-height: 1; font-variant-numeric: tabular-nums; }
+.dbig .n small { font-size: 16px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.dbig .t { font-size: 14px; color: var(--text); }
+.dbig .t span { display: block; color: var(--muted); font-size: 12.5px; }
+.blur-box { position: relative; background: var(--card); border-radius: 12px; padding: 12px 14px; overflow: hidden; }
+.blur-box p { filter: blur(8px); user-select: none; transition: filter 0.3s; }
+.blur-box.revealed p { filter: none; user-select: auto; }
+.blur-box .reveal { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.blur-box.revealed .reveal { display: none; }
+.reveal button, .btn { height: 44px; padding: 0 18px; border-radius: 12px; background: var(--card-2); color: var(--text); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn.red { background: var(--red); color: #fff; }
+.btn.green { background: var(--green); color: #05130a; }
+.btn.ghost { background: var(--card); color: var(--muted); }
+.btn.wide { width: 100%; }
+.btn svg { width: 18px; height: 18px; }
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-row .btn { flex: 1; min-width: 130px; }
+.field { margin-top: 12px; }
+.field label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.field input[type="text"], .field input[type="number"], .field input[type="date"], .field input[type="url"], .field input[type="password"], .field textarea, .field select { width: 100%; background: var(--card); border: 1px solid transparent; border-radius: 12px; padding: 12px 14px; font-size: 16px; outline: 0; min-height: 46px; }
+.field textarea { min-height: 90px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--line); }
+.seg { display: grid; gap: 4px; }
+.seg.two { grid-template-columns: 1fr 1fr; }
+.seg.ten { grid-template-columns: repeat(10, 1fr); }
+.seg button { height: 44px; border-radius: 10px; background: var(--card); color: var(--muted); font-weight: 700; font-size: 14px; }
+.seg button.on { background: var(--text); color: var(--bg); }
+.seg.stars button.on { background: var(--amber); color: #1b1200; }
+.seg.dist button.on { background: var(--red); color: #fff; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips .chip { height: 36px; padding: 0 12px; font-size: 13px; }
+.chips .chip.on { background: var(--text); color: var(--bg); }
+.help { color: var(--dim); font-size: 12.5px; margin-top: 6px; }
+.stamp { color: var(--dim); font-size: 12px; margin-top: 8px; }
+details.editor { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 12px; }
+details.editor summary { list-style: none; cursor: pointer; font-size: 14px; font-weight: 700; color: var(--muted); min-height: 44px; display: flex; align-items: center; gap: 8px; }
+details.editor summary::-webkit-details-marker { display: none; }
+details.editor summary::before { content: "▸"; color: var(--dim); }
+details.editor[open] summary::before { content: "▾"; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two-col .field { margin-top: 8px; }
+
+/* ---------- filter sheet ---------- */
+.range-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+/* ---------- stats ---------- */
+.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.stat { background: var(--card); border-radius: 12px; padding: 12px 14px; }
+.stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.stat.wide { grid-column: 1 / -1; }
+.stat.wide b { font-size: 17px; letter-spacing: -0.01em; }
+.stat.wide span.sub { color: var(--dim); }
+
+/* ---------- random ---------- */
+.pick { background: var(--card); border-radius: 14px; padding: 14px; margin-top: 14px; display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: center; }
+.pick .poster { width: 80px; border-radius: 10px; }
+.pick h4 { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.pick .meta { margin-top: 4px; }
+.pick .btn-row { grid-column: 1 / -1; }
+
+/* ---------- toast ---------- */
+.toast { position: fixed; left: 50%; bottom: calc(84px + var(--sab)); transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 99px; font-size: 14px; font-weight: 600; opacity: 0; transition: opacity 0.2s, transform 0.2s; z-index: 60; pointer-events: none; max-width: calc(100% - 32px); text-align: center; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---------- animations ---------- */
+@keyframes pop { 0% { transform: scale(0.96); } 60% { transform: scale(1.03); } 100% { transform: scale(1); } }
+.watch-btn.pop { animation: pop 0.3s ease-out; }
+
+/* ---------- iOS Safari fixes ---------- */
+button, a, .chip, .card { touch-action: manipulation; }
+button { -webkit-appearance: none; appearance: none; }
+.search input { -webkit-appearance: none; appearance: none; border-radius: 0; }
+.search input::-webkit-search-cancel-button, .search input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+.field input, .field textarea, .field select { -webkit-appearance: none; appearance: none; }
+.field input[type="date"] { min-height: 46px; display: block; }
+.sheet { max-height: calc(100dvh - var(--sat) - 12px); }
+
+/* iOS zooms the page when a focused control is under 16px */
+.select-wrap select { font-size: 16px; }
+.field input, .field textarea, .field select, .search input { font-size: 16px; }
+
+</style>
+</head>
+<body>
+
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5v14l12-7z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16l-6 8v6l-4-2v-4z"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="8.5" cy="8.5" r="1.6" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.6" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.6" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 20V10M12 20V4M19 20v-7"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M20 12a8 8 0 01-14.5 4.6M4 12a8 8 0 0114.5-4.6M18 3v5h-5M6 21v-5h5"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="brand">
+    <h1>Disturbing Movie Tracker<small id="brand-sub">50 films across two lists</small></h1>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" id="btn-stats" aria-label="Statistics"><svg><use href="#i-chart"/></svg></button>
+      <button class="icon-btn" id="btn-settings" aria-label="Settings"><svg><use href="#i-gear"/></svg></button>
+    </div>
+  </div>
+  <div class="progress-block">
+    <div class="overall"><span class="num" id="overall-num">0 / 50</span><span class="label">watched</span></div>
+    <div class="bar"><i id="overall-bar"></i></div>
+    <div class="list-progress" id="list-progress"></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="search">
+    <svg><use href="#i-search"/></svg>
+    <input id="search" type="search" placeholder="Search title, director, country, tag…" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+    <button class="clear hidden" id="search-clear" aria-label="Clear search"><svg width="16" height="16"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="controls">
+    <button class="chip" id="btn-filter"><svg><use href="#i-filter"/></svg>Filters<span class="badge hidden" id="filter-count"></span></button>
+    <button class="chip" data-quick="unwatched">Unwatched</button>
+    <button class="chip" data-quick="watched">Watched</button>
+    <div class="select-wrap"><select id="sort" aria-label="Sort">
+      <option value="position">List order</option>
+      <option value="disturbance-desc">Most disturbing</option>
+      <option value="disturbance-asc">Least disturbing</option>
+      <option value="imdb-desc">Highest IMDb</option>
+      <option value="rtc-desc">Highest RT critics</option>
+      <option value="rta-desc">Highest audience</option>
+      <option value="meta-desc">Highest Metascore</option>
+      <option value="year-desc">Newest</option>
+      <option value="year-asc">Oldest</option>
+      <option value="title-asc">Title A–Z</option>
+      <option value="title-desc">Title Z–A</option>
+      <option value="watched-desc">Recently watched</option>
+      <option value="mine-desc">My highest rated</option>
+      <option value="runtime-asc">Shortest</option>
+    </select></div>
+  </div>
+</div>
+
+<main class="lists" id="lists"></main>
+
+<button class="fab" id="btn-random"><svg><use href="#i-dice"/></svg>What should I watch?</button>
+
+<div class="overlay" id="overlay"></div>
+
+<section class="sheet" id="sheet-detail" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2 class="sr">Movie details</h2><span></span><button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-body" id="detail-body"></div>
+</section>
+
+<section class="sheet" id="sheet-filter" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2>Filters</h2><button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-body" id="filter-body"></div>
+</section>
+
+<section class="sheet" id="sheet-stats" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2>Statistics</h2><button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-body" id="stats-body"></div>
+</section>
+
+<section class="sheet" id="sheet-random" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2>What should I watch?</h2><button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-body" id="random-body"></div>
+</section>
+
+<section class="sheet" id="sheet-settings" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2>Settings &amp; data</h2><button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-body" id="settings-body"></div>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="import-file" accept="application/json,.json" class="hidden">
+
+<script>
+/* Disturbing Movie Tracker — seed database (50 films, two lists)
+   Ratings marked source "seed (approx)" are approximate values recorded from memory.
+   Treat them as placeholders: run "Refresh all ratings" with an OMDb/TMDB key, or
+   correct them in the editor. null = unknown → shown as N/A. Never invented. */
+(function (global) {
+  var NA = { score: null, source: null, lastUpdated: null };
+  function seed(score) { return score == null ? NA : { score: score, source: "seed (approx)", lastUpdated: null }; }
+  function R(imdb, meta, rtc, rta, tmdb) {
+    return {
+      imdb: seed(imdb),
+      metascore: seed(meta),
+      rottenTomatoesCritics: seed(rtc),
+      rottenTomatoesAudience: seed(rta),
+      tmdb: seed(tmdb)
+    };
+  }
+  var A = "original-tiktok-list", B = "vigils-recommendations";
+  function M(o) {
+    o.alternateTitles = o.alternateTitles || [];
+    o.originalTitle = o.originalTitle || o.title;
+    o.contentRating = o.contentRating || null;
+    o.poster = o.poster || null;
+    o.backdrop = null;
+    o.tmdbId = null;
+    o.imdbId = null;
+    o.spoilers = o.spoilers || "";
+    o.ratings = o.ratings || R();
+    o.watchData = { status: "unwatched", dateWatched: null, personalRating: null, personalDisturbance: null, recommend: null, watchAgain: null, notes: "" };
+    return o;
+  }
+
+  var MOVIES = [
+    /* ===================== LIST A — ORIGINAL TIKTOK LIST ===================== */
+    M({ id: "zero-day-2003", title: "Zero Day", year: 2003, list: A, position: 1, director: "Ben Coccio",
+      country: ["United States"], runtime: 92, genres: ["Drama", "Crime"], contentRating: "Not rated",
+      synopsis: "Two high-school seniors keep a video diary as they plan an attack on their own school, documenting ordinary teenage life alongside their preparations.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Realistic Violence", "Psychological", "Bleak"],
+      consensus: "Widely respected as one of the most unsettling school-shooting films because of how ordinary and unremarkable its two leads feel. Praised for restraint; hard to watch precisely because it never sensationalises.",
+      whyDisturbing: "Its horror is the banality: the boys are funny, bored and likeable right up until they are not, and the found-footage format makes the ending feel like something you were not supposed to see.",
+      ratings: R(6.5) }),
+
+    M({ id: "megan-is-missing-2011", title: "Megan Is Missing", year: 2011, list: A, position: 2, director: "Michael Goi",
+      country: ["United States"], runtime: 85, genres: ["Horror", "Drama"], contentRating: "Not rated",
+      synopsis: "Told through webcam chats and phone video, two teenage girls meet someone online, and one of them disappears.",
+      disturbanceScore: 9, disturbanceTags: ["Found Footage", "Child Abuse", "Sexual Violence", "Realistic Violence", "Bleak"],
+      consensus: "Poorly reviewed as a conventional film, with wooden acting and a preachy first hour, but infamous online because of its final twenty minutes, which many viewers describe as genuinely traumatic. A cautionary-tale film that became a dare.",
+      whyDisturbing: "The last act abandons the film's clumsy tone entirely and shows the consequences of the abduction in prolonged, unblinking detail. The subject matter involves minors, which is what makes it so widely regarded as difficult.",
+      ratings: R(4.9) }),
+
+    M({ id: "exhibit-a-2007", title: "Exhibit A", year: 2007, list: A, position: 3, director: "Dom Rotheroe",
+      country: ["United Kingdom"], runtime: 85, genres: ["Drama", "Thriller"], contentRating: "Not rated",
+      synopsis: "A teenage girl's new camcorder records her ordinary Yorkshire family as her father's secret pressures slowly push the household toward collapse.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Family Trauma", "Realistic Violence", "Psychological", "Bleak"],
+      consensus: "A little-seen British found-footage drama that earns strong word of mouth for its slow, believable build. Viewers who find it tend to describe it as one of the more quietly devastating entries in the format.",
+      whyDisturbing: "It plays like real home video of a real family, and the dread comes from watching a decent-seeming man crack under money pressure while nobody around him quite notices in time.",
+      ratings: R() }),
+
+    M({ id: "long-pigs-2007", title: "Long Pigs", year: 2007, list: A, position: 4, director: "Chris Power, Nathan Hynes",
+      country: ["Canada"], runtime: 80, genres: ["Horror", "Mockumentary"], contentRating: "Not rated",
+      synopsis: "Two documentary filmmakers follow a friendly, articulate man who happens to kill and eat people, recording his methods and his philosophy.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Cannibalism", "Serial Killer", "Realistic Violence", "Psychological"],
+      consensus: "A cult micro-budget mockumentary compared often to Man Bites Dog. Admired for a disarmingly likeable lead performance and a matter-of-fact tone that makes the gruesome parts land harder than the budget suggests.",
+      whyDisturbing: "The killer is charming and reasonable, the butchery is shown as routine work, and the film keeps asking how complicit the camera crew (and the viewer) has become.",
+      ratings: R() }),
+
+    M({ id: "lake-mungo-2008", title: "Lake Mungo", year: 2008, list: A, position: 5, director: "Joel Anderson",
+      country: ["Australia"], runtime: 87, genres: ["Horror", "Drama", "Mystery"], contentRating: "R",
+      synopsis: "Presented as a documentary, a family tries to make sense of the drowning of their teenage daughter and the strange events that follow.",
+      disturbanceScore: 6, disturbanceTags: ["Found Footage", "Family Trauma", "Existential", "Psychological"],
+      consensus: "Frequently named among the best mockumentary horror films ever made. Not gory or violent at all; its reputation rests on grief, a deeply sad atmosphere, and one image many viewers say they cannot shake.",
+      whyDisturbing: "The dread is emotional rather than physical. It is about a family learning how little they knew their daughter, and about facing what is waiting for you, and it lingers for days.",
+      ratings: R(6.3) }),
+
+    M({ id: "sorgoi-prakov-2013", title: "Sorgoi Prakov", alternateTitles: ["Descent Into Darkness: My European Nightmare", "Sorgoi Prakov, My European Dream"],
+      year: 2013, list: A, position: 6, director: "Rafael Cherkaski", country: ["France"], runtime: null, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "A young Eastern European man arrives in Paris to film a hopeful documentary about the 'European dream' and instead records his own moral and mental disintegration.",
+      disturbanceScore: 9, disturbanceTags: ["Found Footage", "Sexual Violence", "Realistic Violence", "Psychological", "Bleak", "Extreme Horror"],
+      consensus: "An underground French found-footage film with a fierce reputation among extreme-horror communities. Praised for an unnervingly committed lead performance, criticised for how far it goes in its back half.",
+      whyDisturbing: "It starts almost sweet and then follows its protagonist all the way down. The second half contains sustained, degrading violence presented as raw footage with no relief.",
+      ratings: R() }),
+
+    M({ id: "reel-2-2020", title: "Reel 2", year: 2020, list: A, position: 7, director: "Chris Goodwin",
+      country: ["Canada"], runtime: 104, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "The faceless killer-filmmaker from Reel returns, this time hunting for the perfect actress to star in his sequel, and the footage is presented as his finished film.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Serial Killer", "Torture", "Extreme Horror", "Psychological"],
+      consensus: "A self-released Canadian found-footage sequel known mostly inside the underground horror scene. Fans praise its meta framing and creepy narrator; it is deliberately gruelling in stretches and is not built for casual viewers.",
+      whyDisturbing: "The conceit is that a murderer edited this for you. The stalking is patient, the violence is presented as home video, and the killer's voice-over treats it as art.",
+      ratings: R() }),
+
+    M({ id: "killing-ground-2016", title: "Killing Ground", year: 2016, list: A, position: 8, director: "Damien Power",
+      country: ["Australia"], runtime: 88, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "A couple's camping trip to a remote riverside spot intersects, across two timelines, with the fate of a family who camped there before them.",
+      disturbanceScore: 8, disturbanceTags: ["Realistic Violence", "Sexual Violence", "Bleak", "Family Trauma"],
+      consensus: "Well reviewed as a tight, unusually well-acted Australian outback thriller. Its structure is clever, but the reputation comes from a grim realism about what happens to the family, which many viewers found harder than any slasher.",
+      whyDisturbing: "There is no supernatural buffer. Ordinary people are hurt by ordinary men, cowardice has consequences, and the film refuses catharsis.",
+      ratings: R(5.8) }),
+
+    M({ id: "kidnapped-2010", title: "Kidnapped", alternateTitles: ["Secuestrados"], originalTitle: "Secuestrados", year: 2010, list: A, position: 9, director: "Miguel Ángel Vivas",
+      country: ["Spain"], runtime: 85, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "On their first night in a new house, a family of three is taken hostage by masked men, and the film follows the ordeal in a handful of long unbroken takes.",
+      disturbanceScore: 8, disturbanceTags: ["Home Invasion", "Realistic Violence", "Bleak", "Family Trauma"],
+      consensus: "Admired for its technical daring (twelve long takes, split screen) and despised by some for its nihilism. Widely considered one of the bleakest home-invasion films; the ending is the reason it is on lists like this.",
+      whyDisturbing: "Real time and no cuts mean no escape for the viewer either. The final minutes are abrupt, ugly and offer nothing to hold on to.",
+      ratings: R(6.1) }),
+
+    M({ id: "landmine-goes-click-2015", title: "Landmine Goes Click", year: 2015, list: A, position: 10, director: "Levan Bakhia",
+      country: ["Georgia", "United States"], runtime: 110, genres: ["Thriller", "Horror"], contentRating: "Not rated",
+      synopsis: "Hiking in the Georgian countryside, an American steps on a landmine, and a stranger who wanders by decides to use the situation rather than help.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Sexual Violence", "Revenge", "Bleak", "Realistic Violence"],
+      consensus: "Mixed reviews as a film but a strong reputation for cruelty. The first half is a tense single-location standoff, and the second half turns into something much nastier and more morally bankrupt than viewers expect.",
+      whyDisturbing: "The premise traps a man into watching what he cannot stop, and the film then extends that helplessness into a revenge story where nobody is redeemable.",
+      ratings: R(6.2) }),
+
+    M({ id: "red-white-and-blue-2010", title: "Red, White & Blue", year: 2010, list: A, position: 11, director: "Simon Rumley",
+      country: ["United States", "United Kingdom"], runtime: 104, genres: ["Drama", "Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "In Austin, Texas, a promiscuous young woman, a damaged veteran, and an aspiring musician are drawn together in a chain of decisions that ends in vengeance.",
+      disturbanceScore: 8, disturbanceTags: ["Revenge", "Torture", "Bleak", "Psychological", "Realistic Violence"],
+      consensus: "Critically respected as a slow, character-driven American indie that turns into an unbearable revenge film in its final act. Praised for its performances; often described as emotionally punishing rather than just gory.",
+      whyDisturbing: "It spends an hour making you care about broken people, then shows exactly what one of them is capable of. The violence is intimate and personal rather than spectacular.",
+      ratings: R(6.3) }),
+
+    M({ id: "the-living-and-the-dead-2006", title: "The Living and the Dead", year: 2006, list: A, position: 12, director: "Simon Rumley",
+      country: ["United Kingdom"], runtime: 83, genres: ["Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "In a crumbling English manor, a mentally ill young man decides he alone can care for his bedridden mother after his father leaves, and stops taking his medication.",
+      disturbanceScore: 7, disturbanceTags: ["Psychological", "Family Trauma", "Bleak", "Existential"],
+      consensus: "A little-seen British psychological drama with a devoted cult following. Reviewers highlight a frantic, committed lead performance and a sense of decay; it is disturbing through mental collapse rather than gore.",
+      whyDisturbing: "It is a portrait of good intentions and untreated illness feeding each other in a locked house, and the film's frantic editing puts you inside that spiral.",
+      ratings: R(6.4) }),
+
+    M({ id: "fashionista-2016", title: "Fashionista", year: 2016, list: A, position: 13, director: "Simon Rumley",
+      country: ["United States", "United Kingdom"], runtime: 110, genres: ["Drama", "Thriller"], contentRating: "Not rated",
+      synopsis: "A woman who runs a vintage clothing store with her husband, and who is compulsively attached to clothing, is pulled into a dangerous relationship with a wealthy stranger.",
+      disturbanceScore: 6, disturbanceTags: ["Psychological", "Bleak", "Taboo"],
+      consensus: "The most divisive of Rumley's films, admired as a fractured, sensory character study and dismissed by others as self-indulgent. Less violent than his other work; the discomfort is psychological and sexual.",
+      whyDisturbing: "It is about compulsion, control and self-erasure, told in a disorienting structure that makes the lead's unraveling feel like your own.",
+      ratings: R() }),
+
+    M({ id: "the-horseman-2008", title: "The Horseman", year: 2008, list: A, position: 14, director: "Steven Kastrissios",
+      country: ["Australia"], runtime: 96, genres: ["Thriller", "Crime"], contentRating: "Not rated",
+      synopsis: "After his daughter's death, a Queensland father works his way through the men connected to a pornographic tape she appeared in.",
+      disturbanceScore: 8, disturbanceTags: ["Revenge", "Torture", "Realistic Violence", "Family Trauma", "Bleak"],
+      consensus: "Well regarded as one of the more brutal revenge thrillers of its era. Praised for an intense lead performance and a grounded, unglamorous take on vigilante violence.",
+      whyDisturbing: "The violence is improvised with everyday tools and shown with pain and consequence, and the grief driving it is never allowed to feel heroic.",
+      ratings: R(6.5) }),
+
+    M({ id: "eden-lake-2008", title: "Eden Lake", year: 2008, list: A, position: 15, director: "James Watkins",
+      country: ["United Kingdom"], runtime: 91, genres: ["Horror", "Thriller"], contentRating: "R",
+      synopsis: "A couple's weekend at a remote flooded quarry turns violent after a confrontation with a gang of local teenagers.",
+      disturbanceScore: 8, disturbanceTags: ["Realistic Violence", "Torture", "Bleak", "Revenge"],
+      consensus: "Critically well received and often ranked among the best British horror films of the 2000s. Its reputation comes from relentless tension and one of the most infamously hopeless endings in the genre.",
+      whyDisturbing: "The antagonists are children, the violence is believable, and the film makes a point about class and cowardice that lands as a gut punch in the final scene.",
+      ratings: R(6.7, 66) }),
+
+    M({ id: "found-2012", title: "Found", year: 2012, list: A, position: 16, director: "Scott Schirmer",
+      country: ["United States"], runtime: 103, genres: ["Horror", "Drama"], contentRating: "Not rated",
+      synopsis: "A horror-loving twelve-year-old discovers that his older brother is a serial killer and keeps the secret while the household falls apart.",
+      disturbanceScore: 8, disturbanceTags: ["Serial Killer", "Family Trauma", "Gore", "Extreme Horror", "Bleak"],
+      consensus: "A micro-budget indie that earned real respect for its sincere coming-of-age story, then became notorious for a film-within-the-film sequence and a final act that many viewers found far more upsetting than its budget suggests.",
+      whyDisturbing: "It is told from a child's point of view, and it mixes genuine tenderness with abrupt, extreme violence. The last scene in particular is often cited as one of the bleakest endings in indie horror.",
+      ratings: R(5.9) }),
+
+    M({ id: "headless-2015", title: "Headless", year: 2015, list: A, position: 17, director: "Arthur Cullipher",
+      country: ["United States"], runtime: 85, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "A feature-length version of the fictional 1970s slasher glimpsed in Found, following a masked killer and the visions that drive him.",
+      disturbanceScore: 8, disturbanceTags: ["Gore", "Extreme Horror", "Serial Killer", "Taboo"],
+      consensus: "Made for fans of Found and of grindhouse gore. Praised by that audience for practical effects and total commitment; most others find it repellent by design.",
+      whyDisturbing: "It is wall-to-wall practical gore with a heavy dose of taboo content, presented in a scuzzy retro style that makes it feel like something dug up rather than made.",
+      ratings: R() }),
+
+    M({ id: "eyes-of-a-stranger-1981", title: "Eyes of a Stranger", year: 1981, list: A, position: 18, director: "Ken Wiederhorn",
+      country: ["United States"], runtime: 85, genres: ["Horror", "Thriller"], contentRating: "R",
+      synopsis: "A Miami TV newscaster becomes convinced her neighbour is the killer terrorising the city, while her blind and deaf younger sister is left home alone.",
+      disturbanceScore: 5, disturbanceTags: ["Serial Killer", "Sexual Violence", "Realistic Violence"],
+      consensus: "A minor early-80s slasher remembered for an early Jennifer Jason Leigh performance and Tom Savini effects. Mean-spirited for its time but mild compared to the rest of this list.",
+      whyDisturbing: "The killer's attacks are sleazy and drawn out in the way of early-80s exploitation, and the vulnerability of the sister character is used for sustained dread.",
+      ratings: R(5.9) }),
+
+    M({ id: "skinless-2013", title: "Skinless", year: 2013, list: A, position: 19, director: "Dustin Wayde Mills",
+      country: ["United States"], runtime: null, genres: ["Horror", "Sci-Fi"], contentRating: "Not rated",
+      synopsis: "A cancer researcher tests an experimental parasite-based treatment on himself and undergoes a monstrous transformation.",
+      disturbanceScore: 7, disturbanceTags: ["Body Horror", "Gore", "Extreme Horror", "Psychological"],
+      consensus: "A micro-budget body-horror film with a small cult following. Viewers point to a surprisingly sympathetic lead and some genuinely grotesque practical effects; it is also sexually explicit and grim.",
+      whyDisturbing: "It combines steady physical decay with a collapse of self-control, and does not look away from either.",
+      ratings: R() }),
+
+    M({ id: "we-are-the-flesh-2016", title: "We Are the Flesh", alternateTitles: ["Tenemos la carne"], originalTitle: "Tenemos la carne", year: 2016, list: A, position: 20, director: "Emiliano Rocha Minter",
+      country: ["Mexico", "France"], runtime: 79, genres: ["Horror", "Drama", "Fantasy"], contentRating: "Not rated",
+      synopsis: "Two siblings wandering a ruined city take shelter with a hermit who offers food in exchange for helping him build a strange cavern and obeying his rules.",
+      disturbanceScore: 8, disturbanceTags: ["Taboo", "Cannibalism", "Existential", "Psychological", "Extreme Horror"],
+      consensus: "A Mexican art-horror film championed by some as a bold allegory and dismissed by others as provocation for its own sake. Explicit, surreal and unapologetic; its reputation is built on transgression rather than violence.",
+      whyDisturbing: "It breaks nearly every sexual and social taboo on screen, unsimulated in places, inside a hallucinatory story that never explains itself.",
+      ratings: R(5.5) }),
+
+    M({ id: "bennys-video-1992", title: "Benny's Video", year: 1992, list: A, position: 21, director: "Michael Haneke",
+      country: ["Austria", "Switzerland"], runtime: 105, genres: ["Drama", "Crime"], contentRating: "Not rated",
+      synopsis: "A teenage boy obsessed with video and violent images invites a girl to his family's apartment, and his parents must decide what to do about what he did.",
+      disturbanceScore: 7, disturbanceTags: ["Psychological", "Realistic Violence", "Bleak", "Family Trauma"],
+      consensus: "One of Haneke's most respected early films, admired for its cold examination of media desensitisation and parental complicity. Very little is shown; what is shown, and how, is what upsets people.",
+      whyDisturbing: "A single act of violence is filmed through a video monitor, off-centre and interminable, and the family's response afterwards is arguably worse than the act.",
+      ratings: R(7.0) }),
+
+    M({ id: "the-treatment-2014", title: "The Treatment", alternateTitles: ["De Behandeling"], originalTitle: "De Behandeling", year: 2014, list: A, position: 22, director: "Hans Herbots",
+      country: ["Belgium"], runtime: 125, genres: ["Crime", "Thriller", "Drama"], contentRating: "Not rated",
+      synopsis: "A Belgian police inspector haunted by his brother's childhood disappearance investigates a case involving a family held captive in their own home.",
+      disturbanceScore: 8, disturbanceTags: ["Child Abuse", "Psychological", "Bleak", "Serial Killer"],
+      consensus: "Well reviewed as a grim, expertly made Flemish crime thriller in the vein of Prisoners. Its subject matter is the reason it is here; the film handles it with restraint but does not spare the viewer the weight of it.",
+      whyDisturbing: "Nearly everything terrible happens offscreen or in aftermath, but the case at its centre concerns the abuse of children, and the film treats that with unflinching seriousness.",
+      ratings: R(6.8) }),
+
+    M({ id: "dogtooth-2009", title: "Dogtooth", alternateTitles: ["Kynodontas"], originalTitle: "Κυνόδοντας", year: 2009, list: A, position: 23, director: "Yorgos Lanthimos",
+      country: ["Greece"], runtime: 97, genres: ["Drama", "Thriller"], contentRating: "Not rated",
+      synopsis: "Three adult children have never left the walled family home, where their parents have taught them a private, false version of the world.",
+      disturbanceScore: 7, disturbanceTags: ["Psychological", "Family Trauma", "Taboo", "Bleak"],
+      consensus: "Critically acclaimed and Oscar-nominated; frequently called funny and horrifying in the same sentence. Its disturbing content is deadpan and sudden, and it sits uneasily with viewers for its incest and abuse themes.",
+      whyDisturbing: "The violence is rare but shocking, the sexual content is matter-of-fact and incestuous, and the whole film is an absurdist study of total parental control.",
+      ratings: R(7.2, 73) }),
+
+    M({ id: "moebius-2013", title: "Moebius", alternateTitles: ["Moebiuseu"], originalTitle: "뫼비우스", year: 2013, list: A, position: 24, director: "Kim Ki-duk",
+      country: ["South Korea"], runtime: 89, genres: ["Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "Told without dialogue, a mother's rage at her husband's infidelity sets off a spiral of mutilation, guilt and desire that consumes the entire family.",
+      disturbanceScore: 8, disturbanceTags: ["Taboo", "Sexual Violence", "Family Trauma", "Body Horror", "Psychological"],
+      consensus: "Banned in its home country on first submission and notorious on the festival circuit. Divisive: some see a dark parable about desire, others a numbing string of provocations. Almost universally described as extremely hard to sit through.",
+      whyDisturbing: "It is built around genital mutilation and incest, presented plainly and repeatedly, with no dialogue to soften anything.",
+      ratings: R(6.3) }),
+
+    M({ id: "the-girl-with-the-needle-2024", title: "The Girl with the Needle", alternateTitles: ["Pigen med nålen"], originalTitle: "Pigen med nålen", year: 2024, list: A, position: 25, director: "Magnus von Horn",
+      country: ["Denmark", "Poland", "Sweden"], runtime: 123, genres: ["Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "In post-World War I Copenhagen, a pregnant factory worker with nowhere to turn is taken in by a woman who runs an underground adoption service.",
+      disturbanceScore: 8, disturbanceTags: ["Bleak", "Child Abuse", "Psychological", "Realistic Violence"],
+      consensus: "Acclaimed on release and Oscar-nominated for Best International Feature. Critics praised its stark black-and-white beauty and lead performances; audiences warn that it is one of the bleakest prestige films in years.",
+      whyDisturbing: "It is based on a real case, and its central horror is the fate of infants in a city with no safety net. Very little is graphic; the implications do the damage.",
+      ratings: R(7.2) }),
+
+    /* ===================== LIST B — VIGIL'S RECOMMENDATIONS ===================== */
+    M({ id: "martyrs-2008", title: "Martyrs", year: 2008, list: B, position: 26, director: "Pascal Laugier",
+      country: ["France", "Canada"], runtime: 99, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "Fifteen years after escaping her captors, a young woman tracks down the family she believes tortured her, with her only friend in tow.",
+      disturbanceScore: 10, disturbanceTags: ["Torture", "Psychological", "Extreme Horror", "Existential", "Bleak"],
+      consensus: "Generally considered an extremely difficult but intelligent horror film, the centrepiece of the New French Extremity. Viewers praise its atmosphere and philosophical ambition, while many find its second half exhausting and almost unwatchable.",
+      whyDisturbing: "The final act is a sustained, clinical depiction of systematic abuse whose purpose is revealed slowly. It is less about gore than about endurance, both the character's and yours.",
+      spoilers: "The abuse is being carried out by a secret society trying to manufacture a transcendent witness to the afterlife. The ending's ambiguity (what she whispered) is the film's whole point.",
+      ratings: R(7.0) }),
+
+    M({ id: "irreversible-2002", title: "Irreversible", alternateTitles: ["Irréversible"], originalTitle: "Irréversible", year: 2002, list: B, position: 27, director: "Gaspar Noé",
+      country: ["France"], runtime: 97, genres: ["Crime", "Drama", "Thriller"], contentRating: "Not rated",
+      synopsis: "Told in reverse chronological order, two men tear through Paris seeking revenge for a brutal attack on the woman they both love.",
+      disturbanceScore: 10, disturbanceTags: ["Sexual Violence", "Realistic Violence", "Revenge", "Psychological", "Bleak"],
+      consensus: "One of the most infamous films ever screened at Cannes; walkouts made headlines. Critics were split between calling it a formally brilliant tragedy and an exploitative stunt. Nearly everyone agrees on the power of two specific scenes.",
+      whyDisturbing: "It contains a single-take assault scene of roughly nine minutes and a fire-extinguisher killing shown in full, plus deliberately nauseating camera work and low-frequency sound in the opening act.",
+      ratings: R(7.3, 51) }),
+
+    M({ id: "funny-games-1997", title: "Funny Games", year: 1997, list: B, position: 28, director: "Michael Haneke",
+      country: ["Austria"], runtime: 108, genres: ["Crime", "Drama", "Thriller"], contentRating: "Not rated",
+      synopsis: "A family at their lake house is visited by two polite young men in white who insist on playing games with them.",
+      disturbanceScore: 8, disturbanceTags: ["Home Invasion", "Psychological", "Bleak", "Torture"],
+      consensus: "Highly respected and openly hated in equal measure. Haneke's stated intent is to punish the audience for wanting to watch violence, and the film breaks the fourth wall to do it. Almost no on-screen gore; the cruelty is in the structure.",
+      whyDisturbing: "The violence happens just off frame, the victims are given no way out, and the film openly refuses the catharsis a thriller normally provides.",
+      spoilers: "A killer rewinds the film with a remote control to undo the family's one successful act of resistance.",
+      ratings: R(7.5) }),
+
+    M({ id: "audition-1999", title: "Audition", alternateTitles: ["Ōdishon"], originalTitle: "オーディション", year: 1999, list: B, position: 29, director: "Takashi Miike",
+      country: ["Japan"], runtime: 115, genres: ["Horror", "Drama", "Mystery"], contentRating: "R",
+      synopsis: "A widowed film producer stages a fake casting call to find a new wife and becomes fixated on a quiet, graceful young woman with a hidden past.",
+      disturbanceScore: 8, disturbanceTags: ["Torture", "Psychological", "Body Horror", "Extreme Horror"],
+      consensus: "Widely acclaimed and hugely influential; often called Miike's masterpiece. For most of its length it is a slow, melancholy romantic drama, which is why its final twenty minutes are legendary.",
+      whyDisturbing: "The last act is a methodical torture sequence involving needles and wire, filmed with an almost tender calm. The tonal switch is the trauma.",
+      ratings: R(7.1) }),
+
+    M({ id: "antichrist-2009", title: "Antichrist", year: 2009, list: B, position: 30, director: "Lars von Trier",
+      country: ["Denmark", "Germany", "France"], runtime: 108, genres: ["Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "After the death of their child, a therapist takes his grieving wife to an isolated cabin in the woods called Eden, where nature and their marriage turn hostile.",
+      disturbanceScore: 9, disturbanceTags: ["Psychological", "Sexual Violence", "Body Horror", "Existential", "Bleak", "Family Trauma"],
+      consensus: "Booed and cheered at Cannes, with a Best Actress win for Charlotte Gainsbourg. Regarded as either a raw expression of depression or a misogynist provocation, sometimes both. Visually gorgeous and, in two scenes, notoriously explicit.",
+      whyDisturbing: "It contains explicit, unsimulated sexual content and two acts of genital violence shown in close-up, wrapped in an atmosphere of overwhelming grief.",
+      ratings: R(6.5, 49) }),
+
+    M({ id: "the-house-that-jack-built-2018", title: "The House That Jack Built", year: 2018, list: B, position: 31, director: "Lars von Trier",
+      country: ["Denmark", "France", "Germany", "Sweden"], runtime: 152, genres: ["Crime", "Drama", "Horror"], contentRating: "R",
+      synopsis: "Over twelve years in the 1970s and 80s, a failed architect and serial killer recounts five 'incidents' from his career to an unseen listener.",
+      disturbanceScore: 9, disturbanceTags: ["Serial Killer", "Realistic Violence", "Child Abuse", "Psychological", "Torture", "Existential"],
+      consensus: "Prompted walkouts at Cannes and sharply divided reviews: some saw a self-lacerating essay on art and cruelty, many saw an overlong, smug exercise. The murders are the reason for its reputation, especially one involving a family.",
+      whyDisturbing: "The killings are drawn out, cold and sometimes darkly comic, and one sequence involves children. It also asks you to sit inside the killer's rationalisations for two and a half hours.",
+      ratings: R(6.8, 42) }),
+
+    M({ id: "climax-2018", title: "Climax", year: 2018, list: B, position: 32, director: "Gaspar Noé",
+      country: ["France", "Belgium"], runtime: 97, genres: ["Drama", "Horror", "Musical"], contentRating: "R",
+      synopsis: "A French dance troupe's after-rehearsal party in a snowbound school spirals into a nightmare after someone spikes the sangria with LSD.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Realistic Violence", "Bleak", "Child Abuse"],
+      consensus: "One of Noé's best-reviewed films, praised for its extraordinary dance sequences and hypnotic long takes. The second half is a descent into chaos that many viewers find physically stressful to watch.",
+      whyDisturbing: "It recreates a bad trip from the inside: disorienting camera, screaming, self-harm, and one subplot about a child that is deliberately unbearable.",
+      ratings: R(6.9, 67) }),
+
+    M({ id: "possession-1981", title: "Possession", year: 1981, list: B, position: 33, director: "Andrzej Żuławski",
+      country: ["France", "West Germany"], runtime: 124, genres: ["Drama", "Horror"], contentRating: "R",
+      synopsis: "In divided Berlin, a man returns from a mysterious job to find his wife wants a divorce, and her secret life turns out to be far stranger than an affair.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Body Horror", "Existential", "Family Trauma"],
+      consensus: "Banned in the UK as a 'video nasty' and now revered as a masterpiece of hysteria. Isabelle Adjani's performance is one of the most intense ever filmed. It is not gory in the usual sense; it is unhinged.",
+      whyDisturbing: "The famous subway sequence is a total emotional and physical breakdown performed at full force, and the film surrounds it with screaming, self-harm and something inhuman.",
+      ratings: R(7.3) }),
+
+    M({ id: "threads-1984", title: "Threads", year: 1984, list: B, position: 34, director: "Mick Jackson",
+      country: ["United Kingdom"], runtime: 112, genres: ["Drama", "War", "Sci-Fi"], contentRating: "Not rated",
+      synopsis: "A docudrama following two families in Sheffield before, during and for thirteen years after a nuclear attack on Britain.",
+      disturbanceScore: 9, disturbanceTags: ["War", "Bleak", "Existential", "Realistic Violence", "Family Trauma"],
+      consensus: "Regularly called the most frightening film ever made, and one of the most important. It is a BBC television production with no supernatural content at all; its horror is that it is a plausible forecast, delivered with documentary flatness.",
+      whyDisturbing: "It removes every trace of hope methodically. The attack is only the midpoint; the long collapse of society, health and language afterward is what stays with people.",
+      ratings: R(8.0) }),
+
+    M({ id: "come-and-see-1985", title: "Come and See", alternateTitles: ["Idi i smotri"], originalTitle: "Иди и смотри", year: 1985, list: B, position: 35, director: "Elem Klimov",
+      country: ["Soviet Union"], runtime: 142, genres: ["Drama", "War"], contentRating: "Not rated",
+      synopsis: "A Belarusian teenager joins the partisans in 1943 and witnesses the German occupation's atrocities against the villages of his homeland.",
+      disturbanceScore: 9, disturbanceTags: ["War", "Realistic Violence", "Bleak", "Psychological", "Existential"],
+      consensus: "Widely considered the greatest war film ever made and among the greatest films of any kind. Critics revere its immersive sound and imagery; viewers describe it as an experience they will never repeat. It is disturbing without being exploitative.",
+      whyDisturbing: "It puts you behind the eyes of a boy who ages decades in days, and it stages the burning of a village with a scale and duration that feels like historical record.",
+      ratings: R(8.4) }),
+
+    M({ id: "the-sadness-2021", title: "The Sadness", alternateTitles: ["Ku bei"], originalTitle: "哭悲", year: 2021, list: B, position: 36, director: "Rob Jabbaz",
+      country: ["Taiwan"], runtime: 99, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "A virus mutates in Taipei, turning the infected into gleeful sadists, and a young couple try to reach each other across the city.",
+      disturbanceScore: 9, disturbanceTags: ["Gore", "Extreme Horror", "Sexual Violence", "Realistic Violence", "Bleak"],
+      consensus: "One of the most extreme mainstream-released horror films of the 2020s. Praised by gorehounds as a relentless, well-made splatter film; criticised for using sexual violence as spectacle. Nobody calls it subtle.",
+      whyDisturbing: "The infected retain their intelligence and cruelty, so every attack is personal and deliberate. It combines extreme gore with sexual violence and a total lack of mercy.",
+      ratings: R(6.2) }),
+
+    M({ id: "inside-2007", title: "Inside", alternateTitles: ["À l'intérieur"], originalTitle: "À l'intérieur", year: 2007, list: B, position: 37, director: "Alexandre Bustillo, Julien Maury",
+      country: ["France"], runtime: 82, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "On Christmas Eve, a heavily pregnant widow is stalked in her home by a woman with scissors who wants her baby.",
+      disturbanceScore: 9, disturbanceTags: ["Home Invasion", "Gore", "Extreme Horror", "Realistic Violence", "Bleak"],
+      consensus: "A cornerstone of New French Extremity, praised for its relentless pacing and effects and infamous for its ending. Frequently ranked among the goriest films to receive wide critical respect.",
+      whyDisturbing: "The premise alone (a pregnant woman under attack) is nearly unbearable, and the film delivers on it with enormous quantities of blood and an ending that pulls no punches.",
+      ratings: R(6.7) }),
+
+    M({ id: "frontiers-2007", title: "Frontier(s)", alternateTitles: ["Frontière(s)"], originalTitle: "Frontière(s)", year: 2007, list: B, position: 38, director: "Xavier Gens",
+      country: ["France", "Switzerland"], runtime: 108, genres: ["Horror", "Thriller"], contentRating: "NC-17",
+      synopsis: "Fleeing Paris during riots, a group of young thieves take refuge at a rural inn run by a family of neo-Nazi cannibals.",
+      disturbanceScore: 8, disturbanceTags: ["Torture", "Gore", "Cannibalism", "Extreme Horror", "Realistic Violence"],
+      consensus: "Mixed reviews as a derivative Texas Chain Saw riff, but respected by extreme-horror fans for its sheer viciousness and practical effects. Rated NC-17 in the US for violence alone.",
+      whyDisturbing: "The last hour is a nearly continuous chain of torture and mutilation, with a grim political edge and a deliberately exhausting final chase.",
+      ratings: R(6.2) }),
+
+    M({ id: "high-tension-2003", title: "High Tension", alternateTitles: ["Haute Tension", "Switchblade Romance"], originalTitle: "Haute tension", year: 2003, list: B, position: 39, director: "Alexandre Aja",
+      country: ["France"], runtime: 91, genres: ["Horror", "Thriller"], contentRating: "R",
+      synopsis: "Two college friends visiting a remote farmhouse are attacked by a killer who slaughters the family and abducts one of them.",
+      disturbanceScore: 7, disturbanceTags: ["Home Invasion", "Gore", "Realistic Violence", "Serial Killer"],
+      consensus: "One of the films that launched New French Extremity. Praised for its ferocious first hour and effects; its twist ending is one of the most argued-about in modern horror and drags its reputation down for many.",
+      whyDisturbing: "The killings are brutal, fast and practical, with a home-invasion setup that hits hard. The gore is strong but conventional compared to the extreme entries on this list.",
+      ratings: R(6.8) }),
+
+    M({ id: "the-golden-glove-2019", title: "The Golden Glove", alternateTitles: ["Der goldene Handschuh"], originalTitle: "Der goldene Handschuh", year: 2019, list: B, position: 40, director: "Fatih Akin",
+      country: ["Germany", "France"], runtime: 115, genres: ["Crime", "Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "Based on the real case of Fritz Honka, a physically deformed alcoholic who murdered women he picked up at a squalid Hamburg bar in the 1970s.",
+      disturbanceScore: 9, disturbanceTags: ["Serial Killer", "Realistic Violence", "Sexual Violence", "Bleak", "Extreme Horror"],
+      consensus: "Loathed by many critics for its wallowing in filth and defended by others as an unflinching portrait of squalor. Nearly everyone agrees it is one of the ugliest films ever made, in every sense.",
+      whyDisturbing: "It refuses to let the viewer out of Honka's apartment. The murders are clumsy and pathetic rather than stylised, and the film's sustained ugliness is the assault.",
+      ratings: R(6.6) }),
+
+    M({ id: "snowtown-2011", title: "Snowtown", alternateTitles: ["The Snowtown Murders"], year: 2011, list: B, position: 41, director: "Justin Kurzel",
+      country: ["Australia"], runtime: 120, genres: ["Crime", "Drama"], contentRating: "Not rated",
+      synopsis: "A teenager in an impoverished Adelaide suburb is drawn under the influence of his mother's charismatic new boyfriend, who turns out to be Australia's worst serial killer.",
+      disturbanceScore: 9, disturbanceTags: ["Serial Killer", "Realistic Violence", "Torture", "Child Abuse", "Sexual Violence", "Bleak"],
+      consensus: "Critically acclaimed as a masterful, suffocating true-crime drama. It shows very little on screen relative to its reputation; one torture scene and an overall atmosphere of hopelessness make it one of the most oppressive films on this list.",
+      whyDisturbing: "It is based on real murders, it is filmed with the flat realism of a documentary, and it makes you understand how ordinary people got pulled into participating.",
+      ratings: R(6.6) }),
+
+    M({ id: "nothing-bad-can-happen-2013", title: "Nothing Bad Can Happen", alternateTitles: ["Tore tanzt"], originalTitle: "Tore tanzt", year: 2013, list: B, position: 42, director: "Katrin Gebbe",
+      country: ["Germany"], runtime: 110, genres: ["Drama"], contentRating: "Not rated",
+      synopsis: "A gentle young Christian in Hamburg is taken in by a family whose patriarch begins to test, humiliate and abuse him in escalating ways.",
+      disturbanceScore: 9, disturbanceTags: ["Torture", "Psychological", "Bleak", "Realistic Violence", "Family Trauma"],
+      consensus: "Premiered at Cannes and was praised as a rigorous, painful parable about faith and cruelty. Its reputation for being unbearable comes from the fact that the protagonist never fights back and the abuse is entirely plausible.",
+      whyDisturbing: "Based on a real case, it is a slow, deliberate study in how a decent person can be destroyed by people who are simply bored and cruel, and it withholds every exit.",
+      ratings: R(6.6) }),
+
+    M({ id: "the-eyes-of-my-mother-2016", title: "The Eyes of My Mother", year: 2016, list: B, position: 43, director: "Nicolas Pesce",
+      country: ["United States"], runtime: 76, genres: ["Horror", "Drama"], contentRating: "R",
+      synopsis: "A young woman raised on an isolated farm by a mother who taught her anatomy grows up alone and profoundly warped after a stranger visits the house.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Torture", "Bleak", "Family Trauma", "Existential"],
+      consensus: "Well reviewed as a beautiful, quiet, black-and-white art-horror film. Very little violence is shown directly; its reputation rests on implication, loneliness and one deeply unsettling central idea.",
+      whyDisturbing: "The horror is almost entirely off-screen, but the film's calm about captivity and mutilation, and its sympathy for its protagonist, makes it hard to shake.",
+      ratings: R(6.2) }),
+
+    M({ id: "angst-1983", title: "Angst", alternateTitles: ["Fear", "Schizophrenia"], year: 1983, list: B, position: 44, director: "Gerald Kargl",
+      country: ["Austria"], runtime: 87, genres: ["Horror", "Crime"], contentRating: "Not rated",
+      synopsis: "A murderer is released from prison and, hours later, invades a family home in the countryside, with his own voice-over describing his compulsions.",
+      disturbanceScore: 9, disturbanceTags: ["Serial Killer", "Home Invasion", "Realistic Violence", "Psychological", "Bleak"],
+      consensus: "Banned across much of Europe on release and now regarded as one of the most authentic portrayals of a killer's mind ever filmed. Gaspar Noé cites it as a major influence. Technically astonishing and emotionally airless.",
+      whyDisturbing: "The camera rig follows the killer with a nauseating intimacy, and the narration is drawn from a real murderer's statements. The killings are clumsy, frantic and long.",
+      ratings: R(7.1) }),
+
+    M({ id: "henry-portrait-of-a-serial-killer-1986", title: "Henry: Portrait of a Serial Killer", year: 1986, list: B, position: 45, director: "John McNaughton",
+      country: ["United States"], runtime: 83, genres: ["Crime", "Drama", "Horror"], contentRating: "Not rated",
+      synopsis: "A drifter loosely based on Henry Lee Lucas moves through Chicago killing at random, and gradually pulls his roommate into it.",
+      disturbanceScore: 8, disturbanceTags: ["Serial Killer", "Realistic Violence", "Sexual Violence", "Bleak", "Psychological"],
+      consensus: "Shelved for years over its X rating and now a landmark of American independent horror. Critics praise Michael Rooker's performance and its flat, affectless realism. The home-invasion videotape scene is the one everyone remembers.",
+      whyDisturbing: "No music cues, no moralising, no consequences. A family's murder is shown on a camcorder tape the killers replay for entertainment.",
+      ratings: R(7.0) }),
+
+    M({ id: "speak-no-evil-2022", title: "Speak No Evil", alternateTitles: ["Gæsterne"], originalTitle: "Gæsterne", year: 2022, list: B, position: 46, director: "Christian Tafdrup",
+      country: ["Denmark", "Netherlands"], runtime: 97, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "A Danish family accepts a weekend invitation from a Dutch couple they met on holiday, and social politeness keeps them from leaving as things get stranger.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Bleak", "Child Abuse", "Realistic Violence", "Family Trauma"],
+      consensus: "Well reviewed as a squirm-inducing satire of politeness that becomes something far darker. The original Danish version is on this list specifically because its ending refuses the reassurance the 2024 American remake added.",
+      whyDisturbing: "It is about people who cannot bring themselves to be rude, even to save themselves, and the final fifteen minutes take that idea to its logical, hopeless conclusion.",
+      ratings: R(6.4) }),
+
+    M({ id: "the-coffee-table-2022", title: "The Coffee Table", alternateTitles: ["La mesita del comedor"], originalTitle: "La mesita del comedor", year: 2022, list: B, position: 47, director: "Caye Casas",
+      country: ["Spain"], runtime: 91, genres: ["Drama", "Horror", "Comedy"], contentRating: "Not rated",
+      synopsis: "A bickering couple with a newborn argue over an ugly coffee table, and something happens in the apartment that the husband cannot bring himself to tell anyone.",
+      disturbanceScore: 9, disturbanceTags: ["Bleak", "Psychological", "Family Trauma", "Taboo"],
+      consensus: "A Spanish black comedy that gained a huge word-of-mouth reputation among horror fans as one of the most stomach-turning films of its decade despite showing almost nothing. Critics praised its unbearable tension; many viewers say never again.",
+      whyDisturbing: "Almost everything is implied, and the implication concerns an infant. The film then traps you in a room full of people who do not know what you know for an hour of excruciating comedy.",
+      ratings: R(6.5) }),
+
+    M({ id: "trauma-2017", title: "Trauma", year: 2017, list: B, position: 48, director: "Lucio A. Rojas",
+      country: ["Chile"], runtime: 107, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "Four women on a trip to a rural Chilean house are attacked by a man and his son whose brutality is tied to the country's dictatorship era.",
+      disturbanceScore: 9, disturbanceTags: ["Sexual Violence", "Torture", "Extreme Horror", "Gore", "Realistic Violence", "Bleak"],
+      consensus: "Notorious even among extreme-horror fans, largely for its opening sequence. Some defend it as a political allegory about inherited violence; many dismiss it as one of the most gratuitous films ever made.",
+      whyDisturbing: "The opening scene, set during the Pinochet regime, is widely described as one of the most vile ever filmed, and the rest of the film sustains the same level of sexual and physical cruelty.",
+      ratings: R(5.6) }),
+
+    M({ id: "i-saw-the-devil-2010", title: "I Saw the Devil", alternateTitles: ["Akmareul boatda"], originalTitle: "악마를 보았다", year: 2010, list: B, position: 49, director: "Kim Jee-woon",
+      country: ["South Korea"], runtime: 144, genres: ["Action", "Crime", "Thriller"], contentRating: "Not rated",
+      synopsis: "After his fiancée is murdered by a serial killer, a secret agent finds the man and, rather than arresting him, begins catching and releasing him to prolong his suffering.",
+      disturbanceScore: 8, disturbanceTags: ["Serial Killer", "Revenge", "Torture", "Gore", "Realistic Violence", "Sexual Violence"],
+      consensus: "Highly rated and widely loved as a stylish, propulsive revenge epic with two great lead performances. It is very violent but also very entertaining, which is why it tends to be a gateway film rather than an endurance test.",
+      whyDisturbing: "The violence is frequent, graphic and beautifully shot, and the story keeps asking whether revenge has turned the hero into the monster. Several scenes of assault against women are hard to watch.",
+      ratings: R(7.8, 67) }),
+
+    M({ id: "oldboy-2003", title: "Oldboy", alternateTitles: ["Oldeuboi"], originalTitle: "올드보이", year: 2003, list: B, position: 50, director: "Park Chan-wook",
+      country: ["South Korea"], runtime: 120, genres: ["Action", "Drama", "Mystery", "Thriller"], contentRating: "R",
+      synopsis: "A man imprisoned in a private cell for fifteen years without explanation is suddenly released and given five days to find out why.",
+      disturbanceScore: 8, disturbanceTags: ["Revenge", "Psychological", "Taboo", "Realistic Violence", "Torture"],
+      consensus: "One of the most acclaimed films of the 2000s and the film that put Korean cinema on the world map for many viewers. Its violence is stylised, but the emotional and thematic content of its final act is what earns it a place here.",
+      whyDisturbing: "The hallway fight and the live-octopus scene are the famous parts, but the real disturbance is the revelation at the end, which turns the entire revenge story into something else.",
+      ratings: R(8.4, 77) }),
+
+    /* ===================== LIST A ADDITIONS — A-Z found-footage/extreme picks ===================== */
+    M({ id: "august-underground-2001", title: "August Underground", year: 2001, list: A, position: 51, director: "Fred Vogel",
+      country: ["United States"], runtime: 74, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "Shot entirely on a handheld camcorder, the film follows a nameless killer and his cameraman through days of ordinary life interspersed with escalating acts of violence.",
+      disturbanceScore: 10, disturbanceTags: ["Extreme Horror", "Realistic Violence", "Gore", "Torture", "Found Footage"],
+      consensus: "A notorious no-budget shockumentary that deliberately imitates the look of real snuff footage. Most reviewers call it more an endurance test than a film; it has a small following among extreme-horror completionists specifically because of that reputation.",
+      whyDisturbing: "There is no plot, music, or structure to soften it — just grainy handheld footage designed to look like an actual murderer's home movies, with nothing held back visually.",
+      ratings: R(4.5) }),
+
+    M({ id: "be-my-cat-2015", title: "Be My Cat: A Film for Anne", year: 2015, list: A, position: 52, director: "Adrian Țofei",
+      country: ["Romania"], runtime: 100, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "A Romanian filmmaker records video messages to actress Anne Hathaway, trying to convince her to star in his film, while auditioning local women in increasingly disturbing ways.",
+      disturbanceScore: 8, disturbanceTags: ["Psychological", "Found Footage", "Taboo", "Realistic Violence"],
+      consensus: "A festival-circuit found-footage film praised for a genuinely unsettling lead performance by its director-star. Its low budget works in its favor, since the amateur-video conceit makes the escalation feel uncomfortably plausible.",
+      whyDisturbing: "The obsessive fixation on a real, named celebrity blurs fiction and reality in a way that feels invasive, and the protagonist's control over the women auditioning for him gets steadily worse.",
+      ratings: R(6.0) }),
+
+    M({ id: "cannibal-holocaust-1980", title: "Cannibal Holocaust", year: 1980, list: A, position: 53, director: "Ruggero Deodato",
+      country: ["Italy"], runtime: 95, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "An anthropologist travels into the Amazon to find a missing documentary crew and recovers their footage, which reveals what really happened to them.",
+      disturbanceScore: 10, disturbanceTags: ["Extreme Horror", "Cannibalism", "Sexual Violence", "Realistic Violence", "Found Footage"],
+      consensus: "Widely credited as the original found-footage film and hugely influential on the genre, but its director was briefly prosecuted amid rumors the deaths on screen were real. Its reputation is inseparable from real, unsimulated animal killing shown on camera, which is why many consider it unwatchable regardless of its historical importance.",
+      whyDisturbing: "It combines graphic staged human violence with real, on-camera animal deaths, and its framing device of 'found' documentary footage was disturbing enough that the filmmakers had to prove in court that the actors were still alive.",
+      ratings: R(5.5) }),
+
+    M({ id: "found-footage-2011", title: "Found Footage", year: 2011, list: A, position: 54, director: "Samuel Bartlett",
+      country: ["Australia"], runtime: 64, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "Presented as footage recovered by police, the film follows a small-time thief who steals a camera and uses it to document his escalating spree of stalking and murder.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Serial Killer", "Realistic Violence"],
+      consensus: "A little-seen Australian found-footage film that reviewers describe as gritty and well-executed for its budget, putting the audience uncomfortably inside a killer's own point of view for the entire runtime.",
+      whyDisturbing: "The entire film is shot from the murderer's own perspective as he charms and then kills his victims, with no other viewpoint to break the discomfort of being inside his head.",
+      ratings: R() }),
+
+    M({ id: "gonjiam-2018", title: "Gonjiam: Haunted Asylum", alternateTitles: ["Gonjiam"], originalTitle: "곤지암", year: 2018, list: A, position: 55, director: "Jung Bum-shik",
+      country: ["South Korea"], runtime: 95, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "A horror-themed livestream crew breaks into the real-life notorious Gonjiam Psychiatric Hospital to film a paranormal investigation for online views, and things go wrong fast.",
+      disturbanceScore: 6, disturbanceTags: ["Found Footage", "Psychological"],
+      consensus: "A commercial and critical success in Korea, praised for tight pacing and effective scares rather than gore. It's a highly regarded found-footage haunted-house film, not an especially disturbing one by this list's standards, but a genuinely frightening watch.",
+      whyDisturbing: "It leans on sustained dread and jump scares from a real, infamous location rather than graphic content, building an atmosphere of being trapped somewhere that should never have been reopened.",
+      ratings: R(6.4) }),
+
+    M({ id: "hate-crime-2012", title: "Hate Crime", year: 2012, list: A, position: 56, director: "James Cullen Bressack",
+      country: ["United States"], runtime: 79, genres: ["Horror", "Crime"], contentRating: "Not rated",
+      synopsis: "Told in found-footage style, a family is attacked in their own home one night by masked men targeting them specifically because they are Jewish.",
+      disturbanceScore: 9, disturbanceTags: ["Home Invasion", "Realistic Violence", "Family Trauma", "Extreme Horror"],
+      consensus: "A deliberately punishing micro-budget film that most critics describe as exploitative rather than meaningful, despite the director's stated intent to condemn hate crimes. It has a small extreme-horror following specifically for how unrelenting it is.",
+      whyDisturbing: "The violence is prolonged, motivated by real-world bigotry rather than a movie-monster premise, and the film offers no relief or catharsis from start to finish.",
+      ratings: R(4.4) }),
+
+    M({ id: "incantation-2022", title: "Incantation", alternateTitles: ["Zhu Zhao"], originalTitle: "咒", year: 2022, list: A, position: 57, director: "Kevin Ko",
+      country: ["Taiwan"], runtime: 111, genres: ["Horror"], contentRating: "Not rated",
+      synopsis: "Presented through a mix of camcorder and phone footage, a mother tries to explain and undo a curse she unknowingly brought on herself and her young daughter six years earlier.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Psychological", "Family Trauma", "Existential"],
+      consensus: "A massive streaming hit praised for genuinely inventive scares, including sequences designed to implicate the viewer directly. Widely regarded as one of the most effective found-footage horror films in years.",
+      whyDisturbing: "The film's central gimmick asks the viewer to repeat a chant along with the narrator, turning the audience into an active participant in the curse rather than a passive observer.",
+      ratings: R(6.3) }),
+
+    M({ id: "june-9-2008", title: "June 9", year: 2008, list: A, position: 58, director: "T. Michael Conway",
+      country: ["United States"], runtime: 92, genres: ["Horror", "Mystery", "Thriller"], contentRating: "Not rated",
+      synopsis: "A group of teenagers filming pranks at Ohio's rumored 'Helltown' vanish after one night in June, and their recovered footage surfaces years later.",
+      disturbanceScore: 6, disturbanceTags: ["Found Footage", "Realistic Violence"],
+      consensus: "A low-budget found-footage film based on the real regional legend of Boston Mills, Ohio. Reviews are mixed, with some finding the setup drags and the payoff unclear, and others enjoying its authentic late-90s teenage atmosphere.",
+      whyDisturbing: "It's staged as a genuine unsolved-disappearance document built around a real place with a real spooky local legend, which gives its found-footage conceit more unease than its low budget would otherwise carry.",
+      ratings: R(4.3) }),
+
+    M({ id: "the-killing-of-america-1981", title: "The Killing of America", year: 1981, list: A, position: 59, director: "Sheldon Renan",
+      country: ["United States", "Japan"], runtime: 90, genres: ["Documentary", "Crime"], contentRating: "R",
+      synopsis: "A documentary built from real archival news and crime-scene footage, tracing America's escalating relationship with gun violence from the JFK assassination through the early 1980s.",
+      disturbanceScore: 9, disturbanceTags: ["Realistic Violence", "Bleak", "Existential"],
+      consensus: "Never officially distributed in the US for decades due to its graphic content, and considered one of the most controversial documentaries ever made. Critics who have seen it call it a sobering, methodical, and deeply upsetting document rather than sensationalist shock content.",
+      whyDisturbing: "Nearly everything shown is real archival footage of actual killings and their aftermath, including political assassinations, with no reenactment to create distance from what's on screen.",
+      ratings: R(7.5) }),
+
+    M({ id: "noroi-the-curse-2005", title: "Noroi: The Curse", alternateTitles: ["Noroi"], originalTitle: "呪怨", year: 2005, list: A, position: 60, director: "Kōji Shiraishi",
+      country: ["Japan"], runtime: 115, genres: ["Horror", "Mystery"], contentRating: "Not rated",
+      synopsis: "A documentary filmmaker investigating strange noises at a neighbor's house disappears while researching an ancient curse, and this is his recovered final film.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Psychological", "Existential"],
+      consensus: "Widely considered one of the finest mockumentary horror films ever made, praised for weaving together disparate threads of TV clips, home video, and news footage into a genuinely unsettling whole.",
+      whyDisturbing: "Its slow-burn, meticulously researched-feeling structure makes an outlandish supernatural premise feel disturbingly plausible by the time it reaches its bleak conclusion.",
+      ratings: R(7.3) }),
+
+    M({ id: "occult-2009", title: "Occult", alternateTitles: ["Okaruto"], originalTitle: "オカルト", year: 2009, list: A, position: 61, director: "Kōji Shiraishi",
+      country: ["Japan"], runtime: 104, genres: ["Horror", "Mystery"], contentRating: "Not rated",
+      synopsis: "A documentary crew follows a survivor of a mass stabbing at a seaside shrine as he becomes convinced he's meant to carry out a ritual dictated to him by a mysterious symbol.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Psychological", "Realistic Violence", "Existential"],
+      consensus: "A lesser-known entry from the director of Noroi, admired within found-footage circles for its slow, patient escalation and unusually bleak, unresolved ending.",
+      whyDisturbing: "It methodically documents a real crime victim sliding toward becoming a perpetrator himself, filmed with the same flat, matter-of-fact style as an actual news investigation.",
+      ratings: R() }),
+
+    M({ id: "the-poughkeepsie-tapes-2007", title: "The Poughkeepsie Tapes", year: 2007, list: A, position: 62, director: "John Erick Dowdle",
+      country: ["United States"], runtime: 81, genres: ["Crime", "Horror", "Mystery"], contentRating: "Not rated",
+      synopsis: "Presented as a true-crime documentary, police investigators piece together the identity and methods of a serial killer from hundreds of videotapes he left behind.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Serial Killer", "Torture", "Realistic Violence"],
+      consensus: "Shelved for years after its festival premiere before eventually reaching a wider audience, where it built a reputation as one of the most convincingly upsetting fake-documentary serial-killer films ever made.",
+      whyDisturbing: "The mockumentary format, with talking-head expert interviews cut against the killer's own tapes, sells its fiction as fact convincingly enough that many viewers have mistaken it for a real case.",
+      ratings: R(5.9) }),
+
+    M({ id: "quarantine-2008", title: "Quarantine", year: 2008, list: A, position: 63, director: "John Erick Dowdle",
+      country: ["United States"], runtime: 89, genres: ["Horror", "Thriller"], contentRating: "R",
+      synopsis: "A TV news reporter and her cameraman are trapped inside a Los Angeles apartment building after it's placed under lockdown by the CDC due to a fast-spreading infection.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Realistic Violence", "Extreme Horror"],
+      consensus: "The American remake of Spanish horror film REC, generally well reviewed as an effective, claustrophobic found-footage outbreak thriller, even if compared unfavorably to its source material by genre fans.",
+      whyDisturbing: "The building lockdown removes any possibility of escape, and the infection's rapid, violent progression is shown up close with no music cues to soften the tension.",
+      ratings: R(6.2) }),
+
+    M({ id: "rec-2007", title: "REC", year: 2007, list: A, position: 64, director: "Jaume Balagueró, Paco Plaza",
+      country: ["Spain"], runtime: 78, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "A television reporter filming a night with local firefighters gets trapped inside a quarantined apartment building where residents are turning violently infected.",
+      disturbanceScore: 8, disturbanceTags: ["Found Footage", "Extreme Horror", "Realistic Violence"],
+      consensus: "Widely considered one of the best found-footage horror films ever made, praised for relentless pacing and a genuinely terrifying final act. It spawned the American remake Quarantine and several sequels.",
+      whyDisturbing: "The single-location lockdown premise builds unbroken tension for the entire runtime, and the final minutes, filmed in near-total darkness with only a night-vision camera, are considered one of found footage's most frightening sequences.",
+      ratings: R(7.4) }),
+
+    M({ id: "savageland-2015", title: "Savageland", alternateTitles: ["Savage Land"], year: 2015, list: A, position: 65, director: "Phil Guidry, Simon Herbert, David Whelan",
+      country: ["United States"], runtime: 82, genres: ["Horror", "Mystery"], contentRating: "Not rated",
+      synopsis: "Told through a trial and a recovered roll of photographs, a small Arizona border town's entire population is wiped out overnight, and suspicion falls on the one immigrant survivor.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Realistic Violence", "Bleak"],
+      consensus: "A well-regarded mockumentary that uses still photographs rather than video, praised for its restraint and its pointed subtext about anti-immigrant suspicion following the massacre of a border town.",
+      whyDisturbing: "The horror is conveyed almost entirely through black-and-white crime-scene-style photographs rather than motion footage, which makes the implied violence feel closer to real forensic evidence than to a movie.",
+      ratings: R(6.0) }),
+
+    M({ id: "the-tunnel-2011", title: "The Tunnel", year: 2011, list: A, position: 66, director: "Carlo Ledesma",
+      country: ["Australia"], runtime: 90, genres: ["Horror", "Mystery"], contentRating: "Not rated",
+      synopsis: "A journalist and her crew descend into the disused train tunnels beneath Sydney to investigate a government cover-up, and their footage is all that's left of what happened to them.",
+      disturbanceScore: 6, disturbanceTags: ["Found Footage", "Realistic Violence", "Existential"],
+      consensus: "A well-liked Australian found-footage horror film notable for being crowd-funded and released for free; reviewers praise its atmosphere and claustrophobic tunnel setting over graphic content.",
+      whyDisturbing: "The pitch-black, disorienting tunnel setting and the sense of being hunted somewhere with no way out drives most of the tension rather than any single graphic moment.",
+      ratings: R(5.9) }),
+
+    M({ id: "unfriended-dark-web-2018", title: "Unfriended: Dark Web", year: 2018, list: A, position: 67, director: "Stephen Susco",
+      country: ["United States"], runtime: 88, genres: ["Horror", "Thriller"], contentRating: "R",
+      synopsis: "Told entirely through a laptop screen, a man who finds a stolen computer stumbles into a dark-web video community that watches its victims in real time, and his friends are pulled in over video chat.",
+      disturbanceScore: 6, disturbanceTags: ["Psychological", "Realistic Violence", "Bleak"],
+      consensus: "The stronger-reviewed sequel to Unfriended, praised for committing fully to its bleak ending rather than offering a safe resolution, within the 'screenlife' format of a film that takes place entirely on-screen.",
+      whyDisturbing: "The screen-recording gimmick makes ordinary tech (webcams, chat windows, browser tabs) feel like a surveillance trap, and the ending refuses the usual horror-movie mercy for its characters.",
+      ratings: R(5.9) }),
+
+    M({ id: "vhs-2012", title: "V/H/S", year: 2012, list: A, position: 68, director: "Various", 
+      country: ["United States"], runtime: 116, genres: ["Horror", "Anthology"], contentRating: "Not rated",
+      synopsis: "A group of small-time criminals breaking into a house to steal a specific videotape instead find a pile of tapes, each containing a different found-footage horror short.",
+      disturbanceScore: 7, disturbanceTags: ["Found Footage", "Extreme Horror", "Realistic Violence"],
+      consensus: "Widely credited with reviving and popularizing found-footage horror anthologies, spawning a long-running franchise. Reception to individual segments varies a lot, but the format as a whole is well regarded.",
+      whyDisturbing: "Each segment uses a different, era-appropriate camera format (camcorder, spy glasses, webcam), which keeps the found-footage illusion feeling fresh and unpredictable across the whole anthology.",
+      ratings: R(5.8) }),
+
+    M({ id: "webcast-2018", title: "Webcast", year: 2018, list: A, position: 69, director: "Paul McGhie",
+      country: ["United Kingdom"], runtime: 89, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "Two student filmmakers documenting a decades-old family disappearance become convinced their neighbors are holding a girl against her will, and start surveilling them.",
+      disturbanceScore: 6, disturbanceTags: ["Found Footage", "Child Abuse", "Psychological"],
+      consensus: "A British found-footage folk-horror film that reviewers describe as a solid, if familiar, entry in the genre, with an unusual suburban setting that trades isolated woods for close, claustrophobic neighborly proximity.",
+      whyDisturbing: "The suburban setting means the danger is next door rather than in a remote location, and the mystery of a captive girl escalates into a folk-horror cult reveal by the live-streamed finale.",
+      ratings: R(5.3) }),
+
+    M({ id: "you-are-not-alone-2016", title: "You Are Not Alone", year: 2016, list: A, position: 70, director: "Derek Mungor",
+      country: ["United States"], runtime: 82, genres: ["Horror", "Thriller"], contentRating: "Not rated",
+      synopsis: "Shot entirely from her own point of view, a young woman home for a Fourth of July weekend realizes she is being stalked in her own house as the night goes on.",
+      disturbanceScore: 6, disturbanceTags: ["Home Invasion", "Psychological", "Found Footage"],
+      consensus: "A low-budget first-person horror film that splits opinion: some find the POV gimmick and holiday setting effective, others find the pacing a slog before the home-invasion final act kicks in.",
+      whyDisturbing: "Seeing the stalker only through the victim's own eyes, with no camera cuts to look away to, is the point of the film, and the last stretch turns into a sustained, inescapable home-invasion chase.",
+      ratings: R() })
+  ];
+
+
+  global.SEED_MOVIES = MOVIES;
+  global.LISTS = [
+    { id: A, name: "Original TikTok List", short: "TikTok" },
+    { id: B, name: "Vigil's Recommendations", short: "Vigil" }
+  ];
+  global.DISTURBANCE_TAGS = ["Psychological", "Bleak", "Gore", "Body Horror", "Sexual Violence", "Torture", "Realistic Violence", "Family Trauma", "Child Abuse", "Taboo", "Cannibalism", "Home Invasion", "Serial Killer", "Revenge", "Found Footage", "Existential", "War", "Extreme Horror"];
+})(typeof window !== "undefined" ? window : globalThis);
+
+</script>
+<script>
+/* Disturbing Movie Tracker — app.js */
+(function () {
+  "use strict";
+  var STORE_KEY = "dmt:v1";
+  var DEFAULT_TMDB_KEY = "2ea2d9f26680e44f86a553b4baed079e"; // Joshua's personal TMDB v3 key, baked in so posters fetch with no setup
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var icon = function (id, cls) { return '<svg class="' + (cls || "") + '" aria-hidden="true"><use href="#' + id + '"/></svg>'; };
+  var today = function () { return new Date().toISOString().slice(0, 10); };
+  var fmtDate = function (iso) { if (!iso) return null; var d = new Date(iso.length === 10 ? iso + "T12:00:00" : iso); return isNaN(d) ? iso : d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }); };
+  var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
+
+  /* ---------------- storage ---------------- */
+  var state = { overrides: {}, settings: { omdbKey: "", tmdbKey: "", collapsed: {}, lastRefresh: null } };
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (raw) { var s = JSON.parse(raw); state.overrides = s.overrides || {}; state.settings = Object.assign(state.settings, s.settings || {}); }
+    } catch (e) { console.warn("load failed", e); }
+    if (!state.settings.tmdbKey) state.settings.tmdbKey = DEFAULT_TMDB_KEY;
+  }
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { toast("Could not save (storage full or blocked)"); }
+  }
+  function ov(id) { return state.overrides[id] || (state.overrides[id] = { watchData: null, edits: {}, manual: {} }); }
+
+  /* ---------------- movies ---------------- */
+  var movies = [];
+  function build() {
+    movies = clone(window.SEED_MOVIES).map(function (m) {
+      var o = state.overrides[m.id];
+      if (!o) return m;
+      if (o.edits) {
+        Object.keys(o.edits).forEach(function (k) {
+          if (k === "ratings") {
+            Object.keys(o.edits.ratings).forEach(function (rk) { m.ratings[rk] = Object.assign({}, m.ratings[rk], o.edits.ratings[rk]); });
+          } else m[k] = o.edits[k];
+        });
+      }
+      if (o.watchData) m.watchData = Object.assign({}, m.watchData, o.watchData);
+      return m;
+    });
+    return movies;
+  }
+  function byId(id) { for (var i = 0; i < movies.length; i++) if (movies[i].id === id) return movies[i]; return null; }
+  function listName(id) { var l = window.LISTS.filter(function (x) { return x.id === id; })[0]; return l ? l.name : id; }
+  function setWatch(id, patch) {
+    var o = ov(id); var m = byId(id);
+    o.watchData = Object.assign({}, m.watchData, o.watchData || {}, patch);
+    if (patch.status === "watched" && !o.watchData.dateWatched) o.watchData.dateWatched = today();
+    if (patch.status && patch.status !== "watched") { /* keep personal data but it only shows when watched */ }
+    save(); build();
+  }
+  function setEdit(id, key, value, manualKey) {
+    var o = ov(id);
+    o.edits = o.edits || {}; o.manual = o.manual || {};
+    if (key.indexOf("ratings.") === 0) {
+      var rk = key.split(".")[1];
+      o.edits.ratings = o.edits.ratings || {};
+      o.edits.ratings[rk] = { score: value, source: value == null ? null : "manual", lastUpdated: value == null ? null : today() };
+      o.manual[rk] = true;
+    } else { o.edits[key] = value; if (manualKey) o.manual[manualKey] = true; }
+    save(); build();
+  }
+  function setRating(id, rk, score, source) {
+    var o = ov(id); if (o.manual && o.manual[rk]) return false;
+    o.edits = o.edits || {}; o.edits.ratings = o.edits.ratings || {};
+    o.edits.ratings[rk] = { score: score, source: source, lastUpdated: today() };
+    return true;
+  }
+
+  /* ---------------- helpers ---------------- */
+  function sc(m, key) { var r = m.ratings && m.ratings[key]; return r && r.score != null && r.score !== "" ? Number(r.score) : null; }
+  function fmtScore(v, key) {
+    if (v == null) return "N/A";
+    if (key === "imdb" || key === "tmdb") return Number(v).toFixed(1);
+    if (key === "metascore") return String(Math.round(v));
+    return Math.round(v) + "%";
+  }
+  var SCORE_KEYS = [["imdb", "IMDb"], ["metascore", "Metascore"], ["rottenTomatoesCritics", "RT critics"], ["rottenTomatoesAudience", "RT audience"], ["tmdb", "TMDB"]];
+  function dWord(n) { return ({ 10: "exceptionally disturbing", 9: "extremely disturbing", 8: "very disturbing", 7: "disturbing", 6: "unsettling", 5: "moderately unsettling", 4: "mildly unsettling", 3: "tame", 2: "tame", 1: "tame" })[n] || ""; }
+  function statusLabel(s) { return { unwatched: "Not watched", watched: "Watched", watching: "Currently watching", dropped: "Dropped" }[s] || s; }
+  function posterHTML(m, pos) {
+    var ph = '<div class="ph">' + esc(m.title) + '</div>';
+    var img = m.poster ? '<img src="' + esc(m.poster) + '" alt="" loading="lazy" onerror="this.remove()">' : "";
+    return '<div class="poster">' + (pos != null ? '<span class="pos">' + pos + '</span>' : "") + ph + img + '</div>';
+  }
+  function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove("show"); }, 2200); }
+
+  /* ---------------- filters / sort / search ---------------- */
+  var filters = defaultFilters();
+  var query = "";
+  var sortKey = "position";
+  function defaultFilters() { return { status: "all", list: "all", dMin: 1, dMax: 10, imdbMin: 0, metaMin: 0, rtcMin: 0, rtaMin: 0, yearMin: "", yearMax: "", countries: [], genres: [], tags: [] }; }
+  function activeFilterCount() {
+    var d = defaultFilters(), n = 0;
+    ["status", "list", "dMin", "dMax", "imdbMin", "metaMin", "rtcMin", "rtaMin", "yearMin", "yearMax"].forEach(function (k) { if (String(filters[k]) !== String(d[k])) n++; });
+    n += (filters.countries.length ? 1 : 0) + (filters.genres.length ? 1 : 0) + (filters.tags.length ? 1 : 0);
+    return n;
+  }
+  function matchSearch(m, q) {
+    if (!q) return true;
+    var hay = [m.title, m.originalTitle].concat(m.alternateTitles || [], [m.director, String(m.year)], m.country || [], m.genres || [], m.disturbanceTags || []).join(" | ").toLowerCase();
+    return q.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+  function passes(m) {
+    var w = m.watchData;
+    if (filters.status !== "all" && w.status !== filters.status) return false;
+    if (filters.list !== "all" && m.list !== filters.list) return false;
+    if (m.disturbanceScore < filters.dMin || m.disturbanceScore > filters.dMax) return false;
+    if (filters.imdbMin > 0 && (sc(m, "imdb") == null || sc(m, "imdb") < filters.imdbMin)) return false;
+    if (filters.metaMin > 0 && (sc(m, "metascore") == null || sc(m, "metascore") < filters.metaMin)) return false;
+    if (filters.rtcMin > 0 && (sc(m, "rottenTomatoesCritics") == null || sc(m, "rottenTomatoesCritics") < filters.rtcMin)) return false;
+    if (filters.rtaMin > 0 && (sc(m, "rottenTomatoesAudience") == null || sc(m, "rottenTomatoesAudience") < filters.rtaMin)) return false;
+    if (filters.yearMin && m.year < Number(filters.yearMin)) return false;
+    if (filters.yearMax && m.year > Number(filters.yearMax)) return false;
+    if (filters.countries.length && !m.country.some(function (c) { return filters.countries.indexOf(c) !== -1; })) return false;
+    if (filters.genres.length && !m.genres.some(function (c) { return filters.genres.indexOf(c) !== -1; })) return false;
+    if (filters.tags.length && !filters.tags.every(function (t) { return m.disturbanceTags.indexOf(t) !== -1; })) return false;
+    return matchSearch(m, query);
+  }
+  function cmpNum(a, b, desc) { if (a == null && b == null) return 0; if (a == null) return 1; if (b == null) return -1; return desc ? b - a : a - b; }
+  function sorter(key) {
+    var parts = key.split("-"), f = parts[0], desc = parts[1] === "desc";
+    return function (a, b) {
+      var r = 0;
+      switch (f) {
+        case "position": r = a.position - b.position; break;
+        case "disturbance": r = cmpNum(a.disturbanceScore, b.disturbanceScore, desc); break;
+        case "imdb": r = cmpNum(sc(a, "imdb"), sc(b, "imdb"), desc); break;
+        case "rtc": r = cmpNum(sc(a, "rottenTomatoesCritics"), sc(b, "rottenTomatoesCritics"), desc); break;
+        case "rta": r = cmpNum(sc(a, "rottenTomatoesAudience"), sc(b, "rottenTomatoesAudience"), desc); break;
+        case "meta": r = cmpNum(sc(a, "metascore"), sc(b, "metascore"), desc); break;
+        case "year": r = cmpNum(a.year, b.year, desc); break;
+        case "runtime": r = cmpNum(a.runtime, b.runtime, desc); break;
+        case "title": r = a.title.localeCompare(b.title) * (desc ? -1 : 1); break;
+        case "watched": r = cmpNum(a.watchData.dateWatched ? Date.parse(a.watchData.dateWatched) : null, b.watchData.dateWatched ? Date.parse(b.watchData.dateWatched) : null, true); break;
+        case "mine": r = cmpNum(a.watchData.personalRating, b.watchData.personalRating, true); break;
+      }
+      return r || a.position - b.position;
+    };
+  }
+
+  /* ---------------- render: header ---------------- */
+  function renderProgress() {
+    var watched = movies.filter(function (m) { return m.watchData.status === "watched"; }).length;
+    $("#overall-num").textContent = watched + " / " + movies.length;
+    $("#overall-bar").style.width = (movies.length ? watched / movies.length * 100 : 0) + "%";
+    $("#list-progress").innerHTML = window.LISTS.map(function (l) {
+      var ms = movies.filter(function (m) { return m.list === l.id; });
+      var w = ms.filter(function (m) { return m.watchData.status === "watched"; }).length;
+      return '<div class="lp"><b>' + esc(l.name) + '</b><span>' + w + ' / ' + ms.length + ' watched</span><div class="bar"><i style="width:' + (ms.length ? w / ms.length * 100 : 0) + '%"></i></div></div>';
+    }).join("");
+  }
+
+  /* ---------------- render: cards ---------------- */
+  function cardHTML(m) {
+    var w = m.watchData, st = w.status;
+    var cls = "card" + (st === "watched" ? " watched" : st === "watching" ? " watching" : st === "dropped" ? " dropped" : "");
+    var btnCls = "watch-btn" + (st === "watched" ? " is-watched" : st === "watching" ? " is-watching" : st === "dropped" ? " is-dropped" : "");
+    var btnTxt = st === "watched" ? icon("i-check") + "WATCHED" : st === "watching" ? icon("i-play") + "WATCHING" : st === "dropped" ? icon("i-x") + "DROPPED" : icon("i-check") + "MARK WATCHED";
+    var mine = st === "watched" && (w.personalRating || w.personalDisturbance) ? '<div class="mine">' + (w.personalRating ? 'My rating <b>' + w.personalRating + '/10</b>' : "") + (w.personalRating && w.personalDisturbance ? " · " : "") + (w.personalDisturbance ? 'felt <b>' + w.personalDisturbance + '/10</b>' : "") + '</div>' : "";
+    return '<article class="' + cls + '" data-id="' + m.id + '">' +
+      '<button class="open" data-open="' + m.id + '" aria-label="Open ' + esc(m.title) + '">' + posterHTML(m, m.position) +
+      '<div class="body"><h3 class="title">' + esc(m.title) + ' <span class="yr">' + m.year + '</span></h3>' +
+      '<div class="meta"><span>' + esc(m.country.join(", ")) + '</span>' + (m.runtime ? '<span>' + m.runtime + ' min</span>' : "") + (m.contentRating ? '<span>' + esc(m.contentRating) + '</span>' : "") + '<span>' + esc(m.genres.join(", ")) + '</span></div>' +
+      '<div class="scores"><span class="dscore' + (m.disturbanceScore >= 10 ? " d10" : "") + '"><b>' + m.disturbanceScore + '</b>/10</span>' +
+      SCORE_KEYS.slice(0, 4).map(function (k) { var v = sc(m, k[0]); return '<span class="score' + (v == null ? " na" : "") + '">' + esc(k[1]) + ' <b>' + fmtScore(v, k[0]) + '</b></span>'; }).join("") + '</div>' +
+      '<div class="tags">' + m.disturbanceTags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div>' + mine + '</div></button>' +
+      '<div class="card-actions"><button class="' + btnCls + '" data-toggle="' + m.id + '">' + btnTxt + '</button><button class="more-btn" data-open="' + m.id + '" aria-label="Details">' + icon("i-dots") + '</button></div></article>';
+  }
+  function renderLists() {
+    var sorted = movies.filter(passes).sort(sorter(sortKey));
+    var html = window.LISTS.map(function (l) {
+      var ms = sorted.filter(function (m) { return m.list === l.id; });
+      var total = movies.filter(function (m) { return m.list === l.id; }).length;
+      var col = state.settings.collapsed[l.id];
+      return '<section class="list' + (col ? " collapsed" : "") + '" data-list="' + l.id + '">' +
+        '<button class="list-head" data-collapse="' + l.id + '" aria-expanded="' + (!col) + '"><span class="mark" style="background:' + (l.id === window.LISTS[0].id ? "var(--red)" : "var(--blue)") + '"></span><h2>' + esc(l.name) + '</h2><span class="count">' + ms.length + (ms.length !== total ? " of " + total : "") + '</span>' + icon("i-chev", "chev") + '</button>' +
+        '<div class="cards">' + (ms.length ? ms.map(cardHTML).join("") : '<div class="empty">Nothing here matches your filters.</div>') + '</div></section>';
+    }).join("");
+    $("#lists").innerHTML = html;
+    var n = activeFilterCount(); var b = $("#filter-count"); b.textContent = n; b.classList.toggle("hidden", !n); $("#btn-filter").classList.toggle("on", n > 0);
+    $$(".chip[data-quick]").forEach(function (c) { c.classList.toggle("on", filters.status === c.dataset.quick); });
+  }
+  function renderAll() { renderProgress(); renderLists(); }
+
+  /* ---------------- sheets ---------------- */
+  var openSheet = null;
+  function show(id) {
+    if (openSheet) $("#" + openSheet).classList.remove("open");
+    openSheet = id; $("#overlay").classList.add("open"); var s = $("#" + id); s.classList.add("open"); s.querySelector(".sheet-body").scrollTop = 0;
+    document.body.style.overflow = "hidden";
+    try { if (!history.state || !history.state.sheet) history.pushState({ sheet: id }, ""); } catch (e) {}
+  }
+  function hide() {
+    if (!openSheet) return;
+    $("#" + openSheet).classList.remove("open"); $("#overlay").classList.remove("open"); openSheet = null;
+    document.body.style.overflow = "";
+    if (history.state && history.state.sheet) history.back();
+  }
+  window.addEventListener("popstate", function () { if (openSheet) { $("#" + openSheet).classList.remove("open"); $("#overlay").classList.remove("open"); openSheet = null; document.body.style.overflow = ""; } });
+  $("#overlay").addEventListener("click", hide);
+  $$("[data-close]").forEach(function (b) { b.addEventListener("click", hide); });
+
+  /* ---------------- detail ---------------- */
+  var detailId = null;
+  function renderDetail(id) {
+    var m = byId(id); if (!m) return; detailId = id; var w = m.watchData;
+    var manual = (state.overrides[id] || {}).manual || {};
+    function segBtns(cls, n, cur, attr) { var h = ""; for (var i = 1; i <= n; i++) h += '<button class="' + (cur === i ? "on" : "") + '" data-' + attr + '="' + i + '">' + i + '</button>'; return '<div class="seg ten ' + cls + '">' + h + '</div>'; }
+    function yn(attr, cur) { return '<div class="seg two"><button class="' + (cur === true ? "on" : "") + '" data-' + attr + '="yes">Yes</button><button class="' + (cur === false ? "on" : "") + '" data-' + attr + '="no">No</button></div>'; }
+    var lastUpd = SCORE_KEYS.map(function (k) { return m.ratings[k[0]].lastUpdated; }).filter(Boolean).sort().pop();
+    var html =
+      '<div class="hero">' + posterHTML(m) + '<div><h2>' + esc(m.title) + '</h2>' + (m.originalTitle && m.originalTitle !== m.title ? '<div class="orig">' + esc(m.originalTitle) + '</div>' : "") + (m.alternateTitles.length ? '<div class="orig">Also: ' + esc(m.alternateTitles.join(", ")) + '</div>' : "") +
+      '<div class="meta"><span>' + m.year + '</span><span>' + esc(m.director) + '</span><span>' + esc(m.country.join(", ")) + '</span>' + (m.runtime ? '<span>' + m.runtime + ' min</span>' : "") + (m.contentRating ? '<span>' + esc(m.contentRating) + '</span>' : "") + '</div>' +
+      '<div class="meta" style="margin-top:4px"><span>' + esc(m.genres.join(", ")) + '</span></div><span class="listtag">#' + m.position + ' · ' + esc(listName(m.list)) + '</span></div></div>' +
+      '<div class="big-watch" id="d-status">' + [["unwatched", "i-plus", "Not watched"], ["watched", "i-check", "Watched"], ["watching", "i-play", "Watching"], ["dropped", "i-x", "Dropped"]].map(function (s) { return '<button data-status="' + s[0] + '" class="' + (w.status === s[0] ? "on" : "") + '">' + icon(s[1]) + s[2] + '</button>'; }).join("") + '</div>' +
+      (w.status === "watched" ? '<div class="section"><h3>My rating</h3>' + segBtns("stars", 10, w.personalRating, "rate") +
+        '<h3 style="margin-top:14px">How disturbing was it for me?</h3>' + segBtns("dist", 10, w.personalDisturbance, "pdist") +
+        '<div class="two-col"><div class="field"><label>Would I recommend it?</label>' + yn("rec", w.recommend) + '</div><div class="field"><label>Would I watch it again?</label>' + yn("again", w.watchAgain) + '</div></div>' +
+        '<div class="field"><label>Date watched</label><input type="date" id="d-date" value="' + esc(w.dateWatched || "") + '"></div>' +
+        '<div class="field"><label>Notes</label><textarea id="d-notes" placeholder="What stuck with you?">' + esc(w.notes || "") + '</textarea></div></div>' :
+        (w.notes ? '<div class="section"><h3>Notes</h3><p>' + esc(w.notes) + '</p></div>' : "")) +
+      '<div class="section"><div class="dbig"><div class="n">' + m.disturbanceScore + '<small>/10</small></div><div class="t">Disturbance score<span>' + esc(dWord(m.disturbanceScore)) + '</span><div class="tags" style="margin-top:6px">' + m.disturbanceTags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div></div></div></div>' +
+      '<div class="section"><h3>Synopsis</h3><p>' + esc(m.synopsis) + '</p></div>' +
+      '<div class="section"><h3>Scores</h3><div class="score-grid">' + SCORE_KEYS.map(function (k) { var v = sc(m, k[0]); return '<div class="sc"><b class="' + (v == null ? "na" : "") + '">' + fmtScore(v, k[0]) + '</b><span>' + esc(k[1]) + (manual[k[0]] ? " ✎" : "") + '</span></div>'; }).join("") + '</div>' +
+      (lastUpd ? '<div class="stamp">Last updated: ' + esc(fmtDate(lastUpd)) + '</div>' : '<div class="stamp">Seeded values are approximate. Refresh with an API key or edit below to correct.</div>') + '</div>' +
+      '<div class="section"><h3>General consensus</h3><p>' + esc(m.consensus) + '</p></div>' +
+      '<div class="section"><h3>Why is this disturbing?</h3><div class="blur-box" id="d-why"><p>' + esc(m.whyDisturbing || "No description yet.") + '</p><div class="reveal"><button type="button" data-reveal="why">' + icon("i-eye") + 'Reveal disturbing content</button></div></div></div>' +
+      '<div class="section"><h3>Spoilers</h3><div class="blur-box" id="d-spoil"><p>' + esc(m.spoilers || "No spoiler notes for this film. Add your own in the editor below.") + '</p><div class="reveal"><button type="button" data-reveal="spoil">' + icon("i-eye") + 'Show spoilers</button></div></div></div>' +
+      '<div class="section btn-row"><button class="btn ghost" data-refresh-one>' + icon("i-refresh") + 'Refresh movie data</button></div>' +
+      '<details class="editor"><summary>Edit movie data</summary>' +
+      '<div class="two-col">' + SCORE_KEYS.map(function (k) { var r = m.ratings[k[0]]; return '<div class="field"><label>' + esc(k[1]) + '</label><input type="number" step="0.1" inputmode="decimal" data-edit-rating="' + k[0] + '" value="' + (r.score == null ? "" : r.score) + '" placeholder="N/A"></div>'; }).join("") +
+      '<div class="field"><label>Disturbance score (1–10)</label><input type="number" min="1" max="10" inputmode="numeric" data-edit="disturbanceScore" value="' + m.disturbanceScore + '"></div></div>' +
+      '<div class="field"><label>Poster URL</label><input type="url" data-edit="poster" value="' + esc(m.poster || "") + '" placeholder="https://…"></div>' +
+      '<div class="field"><label>IMDb ID (improves API lookups)</label><input type="text" data-edit="imdbId" value="' + esc(m.imdbId || "") + '" placeholder="tt1234567"></div>' +
+      '<div class="field"><label>Synopsis</label><textarea data-edit="synopsis">' + esc(m.synopsis) + '</textarea></div>' +
+      '<div class="field"><label>Consensus</label><textarea data-edit="consensus">' + esc(m.consensus) + '</textarea></div>' +
+      '<div class="field"><label>Why is this disturbing?</label><textarea data-edit="whyDisturbing">' + esc(m.whyDisturbing || "") + '</textarea></div>' +
+      '<div class="field"><label>Spoilers</label><textarea data-edit="spoilers">' + esc(m.spoilers || "") + '</textarea></div>' +
+      '<div class="help">Changes save as you type and are kept when ratings refresh. Clear a score to show N/A.</div>' +
+      '<div class="btn-row" style="margin-top:12px"><button class="btn ghost" data-reset-edits>Reset this movie to defaults</button></div></details>';
+    $("#detail-body").innerHTML = html;
+  }
+  function openDetail(id) { renderDetail(id); show("sheet-detail"); }
+  $("#detail-body").addEventListener("click", function (e) {
+    var t = e.target.closest("button"); if (!t) return; var id = detailId; var m = byId(id);
+    if (t.dataset.status) { setWatch(id, { status: t.dataset.status }); renderDetail(id); renderAll(); toast(statusLabel(t.dataset.status)); }
+    else if (t.dataset.rate) { setWatch(id, { personalRating: Number(t.dataset.rate) === m.watchData.personalRating ? null : Number(t.dataset.rate) }); renderDetail(id); renderAll(); }
+    else if (t.dataset.pdist) { setWatch(id, { personalDisturbance: Number(t.dataset.pdist) === m.watchData.personalDisturbance ? null : Number(t.dataset.pdist) }); renderDetail(id); }
+    else if (t.dataset.rec) { var v = t.dataset.rec === "yes"; setWatch(id, { recommend: m.watchData.recommend === v ? null : v }); renderDetail(id); }
+    else if (t.dataset.again) { var v2 = t.dataset.again === "yes"; setWatch(id, { watchAgain: m.watchData.watchAgain === v2 ? null : v2 }); renderDetail(id); }
+    else if (t.dataset.reveal) { $(t.dataset.reveal === "why" ? "#d-why" : "#d-spoil").classList.add("revealed"); }
+    else if (t.hasAttribute("data-refresh-one")) { refreshMovie(id, true).then(function () { renderDetail(id); renderAll(); }); }
+    else if (t.hasAttribute("data-reset-edits")) { if (confirm("Reset this movie's metadata to the built-in defaults? Your watch status and notes are kept.")) { var o = ov(id); o.edits = {}; o.manual = {}; save(); build(); renderDetail(id); renderAll(); toast("Reset"); } }
+  });
+  $("#detail-body").addEventListener("input", function (e) {
+    var t = e.target; var id = detailId; if (!id) return;
+    if (t.id === "d-notes") { setWatch(id, { notes: t.value }); }
+    else if (t.id === "d-date") { setWatch(id, { dateWatched: t.value || null }); }
+    else if (t.dataset.editRating) { var v = t.value === "" ? null : Number(t.value); if (t.value !== "" && isNaN(v)) return; setEdit(id, "ratings." + t.dataset.editRating, v); }
+    else if (t.dataset.edit) {
+      var k = t.dataset.edit, val = t.value;
+      if (k === "disturbanceScore") { val = Number(val); if (!(val >= 1 && val <= 10)) return; }
+      if (k === "poster" && !val) val = null;
+      setEdit(id, k, val, k);
+    }
+    clearTimeout(detailRender._t); detailRender._t = setTimeout(function () { renderAll(); }, 300);
+  });
+  function detailRender() {}
+
+  /* ---------------- filter sheet ---------------- */
+  function uniq(arr) { return arr.filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(); }
+  function renderFilter() {
+    var countries = uniq([].concat.apply([], movies.map(function (m) { return m.country; })));
+    var genres = uniq([].concat.apply([], movies.map(function (m) { return m.genres; })));
+    var years = movies.map(function (m) { return m.year; });
+    function chips(arr, key) { return '<div class="chips">' + arr.map(function (v) { return '<button class="chip ' + (filters[key].indexOf(v) !== -1 ? "on" : "") + '" data-multi="' + key + '" data-val="' + esc(v) + '">' + esc(v) + '</button>'; }).join("") + '</div>'; }
+    function single(arr, key) { return '<div class="chips">' + arr.map(function (v) { return '<button class="chip ' + (filters[key] === v[0] ? "on" : "") + '" data-single="' + key + '" data-val="' + esc(v[0]) + '">' + esc(v[1]) + '</button>'; }).join("") + '</div>'; }
+    function num(label, key, min, max, step) { return '<div class="field"><label>' + label + '</label><input type="number" min="' + min + '" max="' + max + '" step="' + step + '" inputmode="decimal" data-num="' + key + '" value="' + filters[key] + '"></div>'; }
+    $("#filter-body").innerHTML =
+      '<div class="section" style="margin-top:6px"><h3>Status</h3>' + single([["all", "All"], ["watched", "Watched"], ["unwatched", "Unwatched"], ["watching", "Currently watching"], ["dropped", "Dropped"]], "status") + '</div>' +
+      '<div class="section"><h3>List</h3>' + single([["all", "Both lists"]].concat(window.LISTS.map(function (l) { return [l.id, l.name]; })), "list") + '</div>' +
+      '<div class="section"><h3>Disturbance score</h3><div class="range-row">' + num("Minimum", "dMin", 1, 10, 1) + num("Maximum", "dMax", 1, 10, 1) + '</div></div>' +
+      '<div class="section"><h3>Minimum scores (0 = ignore)</h3><div class="range-row">' + num("IMDb at least", "imdbMin", 0, 10, 0.1) + num("Metascore at least", "metaMin", 0, 100, 1) + num("RT critics at least", "rtcMin", 0, 100, 1) + num("RT audience at least", "rtaMin", 0, 100, 1) + '</div><div class="help">Movies with N/A for that score are hidden while a minimum is set.</div></div>' +
+      '<div class="section"><h3>Year</h3><div class="range-row"><div class="field"><label>From</label><input type="number" inputmode="numeric" data-num="yearMin" placeholder="' + Math.min.apply(null, years) + '" value="' + filters.yearMin + '"></div><div class="field"><label>To</label><input type="number" inputmode="numeric" data-num="yearMax" placeholder="' + Math.max.apply(null, years) + '" value="' + filters.yearMax + '"></div></div></div>' +
+      '<div class="section"><h3>Country</h3>' + chips(countries, "countries") + '</div>' +
+      '<div class="section"><h3>Genre</h3>' + chips(genres, "genres") + '</div>' +
+      '<div class="section"><h3>Disturbing content (must include all selected)</h3>' + chips(window.DISTURBANCE_TAGS, "tags") + '</div>' +
+      '<div class="section btn-row"><button class="btn ghost" data-clear-filters>Clear all filters</button><button class="btn" data-close>Show <span id="filter-n">' + movies.filter(passes).length + '</span> movies</button></div>';
+    $$("[data-close]", $("#filter-body")).forEach(function (b) { b.addEventListener("click", hide); });
+  }
+  $("#filter-body").addEventListener("click", function (e) {
+    var t = e.target.closest("button"); if (!t) return;
+    if (t.dataset.multi) { var arr = filters[t.dataset.multi]; var i = arr.indexOf(t.dataset.val); i === -1 ? arr.push(t.dataset.val) : arr.splice(i, 1); t.classList.toggle("on"); }
+    else if (t.dataset.single) { filters[t.dataset.single] = t.dataset.val; $$('[data-single="' + t.dataset.single + '"]', $("#filter-body")).forEach(function (b) { b.classList.toggle("on", b === t); }); }
+    else if (t.hasAttribute("data-clear-filters")) { filters = defaultFilters(); renderFilter(); }
+    else return;
+    renderLists(); var n = $("#filter-n"); if (n) n.textContent = movies.filter(passes).length;
+  });
+  $("#filter-body").addEventListener("input", function (e) {
+    var t = e.target; if (!t.dataset.num) return;
+    var k = t.dataset.num; var v = t.value;
+    if (k === "yearMin" || k === "yearMax") filters[k] = v; else { v = Number(v); if (isNaN(v)) return; filters[k] = v; }
+    renderLists(); var n = $("#filter-n"); if (n) n.textContent = movies.filter(passes).length;
+  });
+
+  /* ---------------- stats ---------------- */
+  function avg(arr) { arr = arr.filter(function (v) { return v != null; }); return arr.length ? arr.reduce(function (a, b) { return a + b; }, 0) / arr.length : null; }
+  function renderStats() {
+    var watched = movies.filter(function (m) { return m.watchData.status === "watched"; });
+    var total = movies.length, remaining = total - watched.length;
+    var pct = total ? Math.round(watched.length / total * 100) : 0;
+    var mostD = watched.slice().sort(function (a, b) { return b.disturbanceScore - a.disturbanceScore || a.position - b.position; })[0];
+    var topRated = watched.slice().sort(function (a, b) { return cmpNum(sc(a, "imdb"), sc(b, "imdb"), true); })[0];
+    var topMine = watched.slice().sort(function (a, b) { return cmpNum(a.watchData.personalRating, b.watchData.personalRating, true); })[0];
+    var ym = today().slice(0, 7);
+    var thisMonth = watched.filter(function (m) { return (m.watchData.dateWatched || "").slice(0, 7) === ym; }).length;
+    var f1 = function (v, d) { return v == null ? "—" : Number(v).toFixed(d == null ? 1 : d); };
+    var listStats = window.LISTS.map(function (l) { var ms = movies.filter(function (m) { return m.list === l.id; }); var w = ms.filter(function (m) { return m.watchData.status === "watched"; }).length; return '<div class="stat"><b>' + w + ' / ' + ms.length + '</b><span>' + esc(l.name) + '</span></div>'; }).join("");
+    $("#stats-body").innerHTML = '<div class="stat-grid">' +
+      '<div class="stat"><b>' + total + '</b><span>Total movies</span></div><div class="stat"><b>' + watched.length + '</b><span>Watched</span></div>' +
+      '<div class="stat"><b>' + remaining + '</b><span>Remaining</span></div><div class="stat"><b>' + pct + '%</b><span>Completed</span></div>' +
+      listStats +
+      '<div class="stat"><b>' + thisMonth + '</b><span>Watched this month</span></div>' +
+      '<div class="stat"><b>' + f1(avg(watched.map(function (m) { return sc(m, "imdb"); }))) + '</b><span>Avg IMDb of watched</span></div>' +
+      '<div class="stat"><b>' + f1(avg(watched.map(function (m) { return m.watchData.personalRating; }))) + '</b><span>Avg personal rating</span></div>' +
+      '<div class="stat"><b>' + f1(avg(watched.map(function (m) { return m.disturbanceScore; }))) + '</b><span>Avg disturbance of watched</span></div>' +
+      '<div class="stat"><b>' + f1(avg(watched.map(function (m) { return m.watchData.personalDisturbance; }))) + '</b><span>Avg personal disturbance</span></div>' +
+      '<div class="stat wide"><b>' + (mostD ? esc(mostD.title) + " (" + mostD.disturbanceScore + "/10)" : "—") + '</b><span>Most disturbing watched</span></div>' +
+      '<div class="stat wide"><b>' + (topRated && sc(topRated, "imdb") != null ? esc(topRated.title) + " (IMDb " + fmtScore(sc(topRated, "imdb"), "imdb") + ")" : "—") + '</b><span>Highest-rated watched (IMDb)</span></div>' +
+      '<div class="stat wide"><b>' + (topMine && topMine.watchData.personalRating ? esc(topMine.title) + " (" + topMine.watchData.personalRating + "/10)" : "—") + '</b><span>My highest rated</span></div>' +
+      '</div>' + (watched.length ? "" : '<div class="empty">Mark something watched and the numbers fill in.</div>');
+  }
+
+  /* ---------------- random ---------------- */
+  var lastPick = null;
+  function pickMovie(mode) {
+    var pool = movies.filter(function (m) { return m.watchData.status === "unwatched" || m.watchData.status === "watching"; });
+    pool = pool.filter(function (m) { return m.watchData.status !== "watching"; });
+    if (mode === "list-a") pool = pool.filter(function (m) { return m.list === window.LISTS[0].id; });
+    if (mode === "list-b") pool = pool.filter(function (m) { return m.list === window.LISTS[1].id; });
+    if (!pool.length) return null;
+    var rnd = function (arr) { return arr[Math.floor(Math.random() * arr.length)]; };
+    if (mode === "disturbing") { var mx = Math.max.apply(null, pool.map(function (m) { return m.disturbanceScore; })); return rnd(pool.filter(function (m) { return m.disturbanceScore === mx; })); }
+    if (mode === "rated") { var r = pool.filter(function (m) { return sc(m, "imdb") != null; }); if (!r.length) return rnd(pool); var mxr = Math.max.apply(null, r.map(function (m) { return sc(m, "imdb"); })); return rnd(r.filter(function (m) { return sc(m, "imdb") === mxr; })); }
+    if (mode === "short") { var s = pool.filter(function (m) { return m.runtime; }); if (!s.length) return rnd(pool); var mn = Math.min.apply(null, s.map(function (m) { return m.runtime; })); return rnd(s.filter(function (m) { return m.runtime === mn; })); }
+    return rnd(pool);
+  }
+  function renderRandom() {
+    var modes = [["random", "Completely random"], ["disturbing", "Most disturbing unwatched"], ["rated", "Highest rated unwatched"], ["short", "Shortest unwatched"], ["list-a", "Random from Original TikTok List"], ["list-b", "Random from Vigil's Recommendations"]];
+    $("#random-body").innerHTML = '<div class="help" style="margin-top:0">Only unwatched films are picked. Dropped and currently-watching titles are skipped.</div><div class="chips" style="margin-top:10px">' + modes.map(function (m) { return '<button class="chip" data-mode="' + m[0] + '">' + m[1] + '</button>'; }).join("") + '</div><div id="pick"></div>';
+  }
+  $("#random-body").addEventListener("click", function (e) {
+    var t = e.target.closest("button"); if (!t) return;
+    if (t.dataset.mode) {
+      $$("[data-mode]", $("#random-body")).forEach(function (b) { b.classList.toggle("on", b === t); });
+      var m = pickMovie(t.dataset.mode); lastPick = m ? m.id : null;
+      $("#pick").innerHTML = m ? '<div class="pick">' + posterHTML(m) + '<div><h4>' + esc(m.title) + ' <span style="color:var(--muted);font-weight:500">' + m.year + '</span></h4><div class="meta"><span>' + esc(m.country.join(", ")) + '</span>' + (m.runtime ? '<span>' + m.runtime + ' min</span>' : "") + '</div><div class="scores" style="margin-top:6px"><span class="dscore"><b>' + m.disturbanceScore + '</b>/10</span><span class="score' + (sc(m, "imdb") == null ? " na" : "") + '">IMDb <b>' + fmtScore(sc(m, "imdb"), "imdb") + '</b></span></div><div class="help">' + esc(listName(m.list)) + '</div></div>' +
+        '<div class="btn-row"><button class="btn ghost" data-mode="' + t.dataset.mode + '">Pick another</button><button class="btn" data-open-pick>Open</button><button class="btn green" data-watched-pick>' + icon("i-check") + 'Watched it</button></div></div>' : '<div class="empty">Nothing unwatched left in that pool.</div>';
+    } else if (t.hasAttribute("data-open-pick") && lastPick) { openDetail(lastPick); }
+    else if (t.hasAttribute("data-watched-pick") && lastPick) { setWatch(lastPick, { status: "watched" }); renderAll(); toast("Marked watched"); openDetail(lastPick); }
+  });
+
+  /* ---------------- settings ---------------- */
+  function renderSettings() {
+    var s = state.settings;
+    $("#settings-body").innerHTML =
+      '<div class="section" style="margin-top:6px"><h3>API keys (optional)</h3>' +
+      '<div class="field"><label>OMDb API key — IMDb rating, Metascore, RT critics when available</label><input type="text" id="s-omdb" value="' + esc(s.omdbKey || "") + '" placeholder="omdbapi.com" autocomplete="off"></div>' +
+      '<div class="field"><label>TMDB API key (v3) — posters, overview, runtime, TMDB score</label><input type="text" id="s-tmdb" value="' + esc(s.tmdbKey || "") + '" placeholder="themoviedb.org" autocomplete="off"></div>' +
+      '<div class="help">Keys are stored only on this device. The app works fully without them; Rotten Tomatoes audience scores are always entered by hand in each movie\'s editor.</div>' +
+      '<div class="btn-row" style="margin-top:12px"><button class="btn" data-refresh-all>' + icon("i-refresh") + 'Refresh all ratings</button></div>' +
+      (s.lastRefresh ? '<div class="stamp">Last full refresh: ' + esc(fmtDate(s.lastRefresh)) + '</div>' : "") + '<div id="refresh-log" class="help"></div></div>' +
+      '<div class="section"><h3>Backup</h3><div class="btn-row"><button class="btn" data-export>Export data (JSON)</button><button class="btn" data-import>Import data</button><button class="btn ghost" data-csv>Export watched as CSV</button></div>' +
+      '<div class="help">The JSON export contains the full movie database plus your statuses, ratings, notes, dates and settings. Import restores it.</div></div>' +
+      '<div class="section"><h3>Danger zone</h3><div class="btn-row"><button class="btn ghost" data-reset-all>Erase all my tracking data</button></div></div>' +
+      (isIOS && !window.navigator.standalone ? '<div class="section"><h3>Install on iPhone / iPad</h3><p style="color:var(--muted);font-size:13.5px">Open this page in Safari, tap the Share button, then <b>Add to Home Screen</b>. It then opens full-screen like an app and keeps your data on this device. Use Export data regularly: iOS can clear website data it hasn\'t seen in a while if the app isn\'t installed.</p></div>' : '') + '<div class="section"><h3>About</h3><p style="color:var(--muted);font-size:13.5px">' + movies.length + ' films: ' + window.LISTS.map(function (l) { return movies.filter(function (m) { return m.list === l.id; }).length + " in " + l.name; }).join(", ") + '. Seeded scores are approximate and marked as such until refreshed or edited. Works offline; add to your home screen from the browser menu.</p></div>';
+  }
+  $("#settings-body").addEventListener("input", function (e) {
+    if (e.target.id === "s-omdb") { state.settings.omdbKey = e.target.value.trim(); save(); }
+    if (e.target.id === "s-tmdb") {
+      var nv = e.target.value.trim(); var changed = nv !== state.settings.tmdbKey;
+      state.settings.tmdbKey = nv;
+      if (changed && nv) { Object.keys(state.overrides).forEach(function (id) { var m = state.overrides[id].manual; if (m) delete m.posterAttempted; }); }
+      save();
+      clearTimeout(autoFetchPosters._t); autoFetchPosters._t = setTimeout(function () { autoFetchPosters(true); }, 500);
+    }
+  });
+  $("#settings-body").addEventListener("click", function (e) {
+    var t = e.target.closest("button"); if (!t) return;
+    if (t.hasAttribute("data-export")) exportJSON();
+    else if (t.hasAttribute("data-import")) $("#import-file").click();
+    else if (t.hasAttribute("data-csv")) exportCSV();
+    else if (t.hasAttribute("data-refresh-all")) refreshAll();
+    else if (t.hasAttribute("data-reset-all")) { if (confirm("Erase every watch status, rating, note and edit on this device? Export first if you want a backup.")) { state.overrides = {}; save(); build(); renderAll(); renderSettings(); toast("Erased"); } }
+  });
+  var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  function download(name, text, type) {
+    if (isIOS && window.File && navigator.canShare && navigator.share) {
+      try {
+        var f = new File([text], name, { type: type || "application/json" });
+        if (navigator.canShare({ files: [f] })) { navigator.share({ files: [f], title: name }).catch(function () {}); return; }
+      } catch (e) { /* fall through */ }
+    }
+    var blob = new Blob([text], { type: type || "application/json" }); var url = URL.createObjectURL(blob);
+    var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 500);
+  }
+  function exportJSON() {
+    var out = { app: "Disturbing Movie Tracker", version: 1, exportedAt: new Date().toISOString(), settings: state.settings, overrides: state.overrides, movies: movies };
+    download("disturbing-movie-tracker-" + today() + ".json", JSON.stringify(out, null, 2)); toast("Exported");
+  }
+  function exportCSV() {
+    var rows = [["Title", "Year", "List", "Director", "Country", "Disturbance", "IMDb", "Metascore", "RT critics", "RT audience", "TMDB", "My rating", "My disturbance", "Recommend", "Watch again", "Date watched", "Notes"]];
+    movies.filter(function (m) { return m.watchData.status === "watched"; }).sort(sorter("position")).forEach(function (m) {
+      var w = m.watchData; rows.push([m.title, m.year, listName(m.list), m.director, m.country.join("; "), m.disturbanceScore, sc(m, "imdb"), sc(m, "metascore"), sc(m, "rottenTomatoesCritics"), sc(m, "rottenTomatoesAudience"), sc(m, "tmdb"), w.personalRating, w.personalDisturbance, w.recommend == null ? "" : w.recommend ? "Yes" : "No", w.watchAgain == null ? "" : w.watchAgain ? "Yes" : "No", w.dateWatched, w.notes]);
+    });
+    var csv = rows.map(function (r) { return r.map(function (v) { v = v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(","); }).join("\r\n");
+    download("watched-movies-" + today() + ".csv", "\ufeff" + csv, "text/csv"); toast(rows.length - 1 + " watched movies exported");
+  }
+  $("#import-file").addEventListener("change", function (e) {
+    var f = e.target.files[0]; if (!f) return; var rd = new FileReader();
+    rd.onload = function () {
+      try {
+        var d = JSON.parse(rd.result); if (!d || (!d.overrides && !d.movies)) throw new Error("bad");
+        if (!confirm("Replace the tracking data on this device with the imported file?")) return;
+        if (d.overrides) state.overrides = d.overrides;
+        else if (d.movies) { state.overrides = {}; d.movies.forEach(function (m) { if (m && m.id) state.overrides[m.id] = { watchData: m.watchData || null, edits: {}, manual: {} }; }); }
+        if (d.settings) state.settings = Object.assign(state.settings, d.settings);
+        save(); build(); renderAll(); renderSettings(); toast("Imported");
+      } catch (err) { toast("That file is not a tracker export"); }
+      e.target.value = "";
+    };
+    rd.readAsText(f);
+  });
+
+  /* ---------------- API refresh ---------------- */
+  function fetchJSON(url) { return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function refreshMovie(id, verbose) {
+    var m = byId(id), s = state.settings, jobs = [], changed = 0;
+    if (!navigator.onLine) { if (verbose) toast("You're offline"); return Promise.resolve(false); }
+    if (!s.omdbKey && !s.tmdbKey) { if (verbose) toast("Add an OMDb or TMDB key in Settings first"); return Promise.resolve(false); }
+    var o = ov(id); o.edits = o.edits || {}; o.manual = o.manual || {};
+    if (s.omdbKey) {
+      var q = "https://www.omdbapi.com/?apikey=" + encodeURIComponent(s.omdbKey) + (m.imdbId ? "&i=" + encodeURIComponent(m.imdbId) : "&t=" + encodeURIComponent(m.title) + "&y=" + m.year);
+      jobs.push(fetchJSON(q).then(function (d) {
+        if (!d || d.Response === "False") return;
+        if (d.Year && String(d.Year).slice(0, 4) !== String(m.year) && !m.imdbId) return; // wrong film; do not trust
+        var num = function (v) { var n = parseFloat(String(v).replace("%", "")); return isNaN(n) ? null : n; };
+        if (num(d.imdbRating) != null && setRating(id, "imdb", num(d.imdbRating), "OMDb")) changed++;
+        if (num(d.Metascore) != null && setRating(id, "metascore", num(d.Metascore), "OMDb")) changed++;
+        (d.Ratings || []).forEach(function (r) { if (r.Source === "Rotten Tomatoes" && num(r.Value) != null && setRating(id, "rottenTomatoesCritics", num(r.Value), "OMDb")) changed++; });
+        if (d.imdbID && !m.imdbId) o.edits.imdbId = d.imdbID;
+        if (d.Rated && d.Rated !== "N/A" && !o.manual.contentRating) o.edits.contentRating = d.Rated;
+        if (!m.poster && d.Poster && d.Poster !== "N/A" && !o.manual.poster) o.edits.poster = d.Poster;
+      }).catch(function () {}));
+    }
+    if (s.tmdbKey) {
+      var base = "https://api.themoviedb.org/3/";
+      var find = m.tmdbId ? Promise.resolve(m.tmdbId) : fetchJSON(base + "search/movie?api_key=" + encodeURIComponent(s.tmdbKey) + "&query=" + encodeURIComponent(m.originalTitle || m.title) + "&year=" + m.year + "&include_adult=true").then(function (d) {
+        var hits = (d.results || []).filter(function (r) { return (r.release_date || "").slice(0, 4) === String(m.year); });
+        if (!hits.length) hits = (d.results || []).filter(function (r) { return Math.abs(Number((r.release_date || "0").slice(0, 4)) - m.year) <= 1; });
+        return hits.length ? hits[0].id : null;
+      });
+      jobs.push(find.then(function (tid) {
+        if (!tid) return; o.edits.tmdbId = tid;
+        return fetchJSON(base + "movie/" + tid + "?api_key=" + encodeURIComponent(s.tmdbKey)).then(function (d) {
+          if (d.vote_average && d.vote_count > 0 && setRating(id, "tmdb", Math.round(d.vote_average * 10) / 10, "TMDB")) changed++;
+          if (d.poster_path && !o.manual.poster) o.edits.poster = "https://image.tmdb.org/t/p/w342" + d.poster_path;
+          if (d.backdrop_path) o.edits.backdrop = "https://image.tmdb.org/t/p/w780" + d.backdrop_path;
+          if (d.runtime && !m.runtime) o.edits.runtime = d.runtime;
+          if (d.overview && !o.manual.synopsis && !window.SEED_MOVIES.some(function (x) { return x.id === id && x.synopsis; })) o.edits.synopsis = d.overview;
+        });
+      }).catch(function () {}));
+    }
+    return Promise.all(jobs).then(function () { save(); build(); if (verbose) toast(changed ? "Updated " + changed + " score" + (changed > 1 ? "s" : "") : "No new scores (manual values are kept)"); return changed; });
+  }
+  /* auto-fetch posters quietly whenever a TMDB key is present and something is missing one */
+  var autoFetchRunning = false;
+  function autoFetchPosters(announce) {
+    var s = state.settings;
+    if (!s.tmdbKey || autoFetchRunning) return;
+    if (typeof navigator !== "undefined" && "onLine" in navigator && !navigator.onLine) return;
+    var todo = movies.filter(function (m) { var o = state.overrides[m.id] || {}; return !m.poster && !(o.manual && o.manual.posterAttempted); });
+    if (!todo.length) return;
+    autoFetchRunning = true;
+    var i = 0, found = 0;
+    (function next() {
+      if (i >= todo.length) {
+        autoFetchRunning = false;
+        if (found) { renderAll(); if ($("#settings-body").offsetParent) renderSettings(); }
+        if (announce && found) toast(found + " poster" + (found !== 1 ? "s" : "") + " added");
+        return;
+      }
+      var m = todo[i++];
+      refreshMovie(m.id, false).then(function () {
+        var mm = byId(m.id);
+        if (mm.poster) { found++; renderLists(); }
+        else { var o = ov(m.id); o.manual = o.manual || {}; o.manual.posterAttempted = true; save(); }
+        setTimeout(next, 200);
+      }).catch(function () { setTimeout(next, 200); });
+    })();
+  }
+  function refreshAll() {
+    var s = state.settings; if (!s.omdbKey && !s.tmdbKey) return toast("Add an API key first");
+    if (!navigator.onLine) return toast("You're offline");
+    var log = $("#refresh-log"), i = 0, total = 0;
+    (function next() {
+      if (i >= movies.length) { state.settings.lastRefresh = today(); save(); renderAll(); renderSettings(); toast("Refreshed: " + total + " scores updated"); return; }
+      var m = movies[i++]; if (log) log.textContent = "Refreshing " + i + " / " + movies.length + ": " + m.title;
+      refreshMovie(m.id, false).then(function (c) { total += c || 0; setTimeout(next, 250); });
+    })();
+  }
+
+  /* ---------------- events ---------------- */
+  $("#lists").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.toggle) {
+      var m = byId(b.dataset.toggle); var next = m.watchData.status === "watched" ? "unwatched" : "watched";
+      setWatch(m.id, { status: next }); renderAll();
+      var nb = $('[data-toggle="' + m.id + '"]'); if (nb) nb.classList.add("pop");
+      toast(next === "watched" ? "✓ " + m.title + " watched" : m.title + " marked not watched");
+    } else if (b.dataset.open) openDetail(b.dataset.open);
+    else if (b.dataset.collapse) { state.settings.collapsed[b.dataset.collapse] = !state.settings.collapsed[b.dataset.collapse]; save(); renderLists(); }
+  });
+  $("#search").addEventListener("input", function (e) { query = e.target.value.trim().toLowerCase(); $("#search-clear").classList.toggle("hidden", !query); renderLists(); });
+  $("#search-clear").addEventListener("click", function () { $("#search").value = ""; query = ""; $("#search-clear").classList.add("hidden"); renderLists(); $("#search").focus(); });
+  $("#sort").addEventListener("change", function (e) { sortKey = e.target.value; renderLists(); });
+  $$(".chip[data-quick]").forEach(function (c) { c.addEventListener("click", function () { filters.status = filters.status === c.dataset.quick ? "all" : c.dataset.quick; renderLists(); }); });
+  $("#btn-filter").addEventListener("click", function () { renderFilter(); show("sheet-filter"); });
+  $("#btn-stats").addEventListener("click", function () { renderStats(); show("sheet-stats"); });
+  $("#btn-random").addEventListener("click", function () { renderRandom(); show("sheet-random"); });
+  $("#btn-settings").addEventListener("click", function () { renderSettings(); show("sheet-settings"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
+
+  /* swipe-down on the grab handle closes a sheet */
+  var sy = null;
+  document.addEventListener("touchstart", function (e) { var g = e.target.closest(".grab, .sheet-head"); sy = g ? e.touches[0].clientY : null; }, { passive: true });
+  document.addEventListener("touchend", function (e) { if (sy != null && e.changedTouches[0].clientY - sy > 60) hide(); sy = null; }, { passive: true });
+
+  /* ---------------- init ---------------- */
+  load(); build();
+  $("#brand-sub").textContent = movies.length + " films across " + window.LISTS.length + " lists";
+  renderAll();
+  setTimeout(function () { autoFetchPosters(true); }, 600);
+  if ("serviceWorker" in navigator && location.protocol !== "file:") { navigator.serviceWorker.register("service-worker.js").catch(function () {}); }
+  window.DMT = { movies: function () { return movies; }, state: state, filters: filters, passes: passes, sorter: sorter, pickMovie: pickMovie, setWatch: setWatch, build: build };
+})();
+
+</script>
+</body>
+</html>
